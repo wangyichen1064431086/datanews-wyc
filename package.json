@@ -1,0 +1,19 @@
+{
+  "name": "datanews-wyc",
+  "version": "0.1.0",
+  "description": "\"datanews making application\"",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wang Yichen",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "co": "^4.6.0",
+    "gulp": "^3.9.1",
+    "is-there": "^4.3.6",
+    "mkdirp": "^0.5.1",
+    "nunjucks": "^3.0.0"
+  }
+}
