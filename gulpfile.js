@@ -30,7 +30,7 @@ gulp.task('html',() => {
 		}		
 
 		const myData = yield helper.readJson('data/obor.json');
-		const myTemplate = 'demo.html';
+		const myTemplate = 'index.html';
 
 		const renderResult = yield helper.render(myTemplate,myData);/*这里的myTemplate得用继承的demo.html而不能用被继承的index.html，待研究？？？*/
 		console.log(renderResult);

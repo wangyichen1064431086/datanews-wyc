@@ -15,9 +15,17 @@
 		<!-- endsmoosh -->
 	</head>
 	<body>
-		{% block body %}
-		{% endblock %}
-		<div>{{demoDiv}}</div>
+		{% if titlePart %}
+			{% include "parts/titlePart.html" %}
+		{% endif %}
+
+		{% if mainPart %}
+			{% include "parts/mainPart.html" %}
+		{% endif %}
+
+		{% if footerPart %}
+			{% include "parts/footerPart.html" %}
+		{% endif %}
 		<!-- smoosh -->
 		<script type="text/javascript" src="scripts/main.js"></script>
 		<!-- endsmoosh -->

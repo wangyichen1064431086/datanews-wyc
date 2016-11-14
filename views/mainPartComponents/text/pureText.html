@@ -1,0 +1,9 @@
+<section class="text">
+	{% for item in paragraphs %}
+		<p>
+			{{ item.word }}
+		</p>
+	{% else %}
+		<p></p>
+	{% endfor %}
+</section>
