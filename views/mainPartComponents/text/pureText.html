@@ -1,9 +1,15 @@
 <section class="text">
-	{% for item in paragraphs %}
+	{% for paragraph in pureText.paragraphs %}
 		<p>
-			{{ item.word }}
+			{{ paragraph.word }}
 		</p>
 	{% else %}
 		<p></p>
 	{% endfor %}
+	
+	<!--
+	{% for item in pureText.images %}
+		<img src="{{item.src}}" alt="{{item.alt}}" />
+	{% endfor %}
+	-->
 </section>

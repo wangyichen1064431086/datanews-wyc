@@ -1,9 +1,10 @@
 <article>
-	{% if section0 %}
+	{% for pureText in mainPart %}
 		{% include "mainPartComponents/text/pureText.html" %}
 	{% endif %}
-
-	{% if section1 %}
+	<!--
+	{% if mainPart.purePic %}
 		{% include "mainPartComponents/pic/purePic.html" %}
 	{% endif %}
+	-->
 </article>

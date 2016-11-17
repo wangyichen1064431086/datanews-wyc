@@ -1,16 +1,28 @@
 <header>
+ 	{% if titlePart.mainTitle %}
 	<h1 class="mainTitle">
-		“一带一路”是否改变了中国海外投资行为？
+		{{titlePart.mainTitle}}
 	</h1>
+	{% endif %}
+
+	{% if titlePart.subTitle %}
 	<h2 class="subTitle">
-		""
+		{{titlePart.subTitle}}
 	</h2>
+	{% endif %}
+
+	{% if titlePart.dateTime %}
 	<p class="dateTime">
-		2015年8月25日
+		{{titlePart.dateTime}}
 	</p>	
+	{% endif %}
+
+	{% if titlePart.authorInfo %}
 	<p class="authorInfo">
-		英国《金融时报》报道
+		{{titlePart.authorInfo}}
 	</p>
+	{% endif %}
+
 	<p class="words">
 		从数据看，一带一路概念提出两年来，尚未对中国的海外投资产生明显影响。但学者提醒，一带一路的重点变化将在明年成形。
 	</p>
