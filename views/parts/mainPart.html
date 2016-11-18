@@ -1,5 +1,5 @@
 <article>
-	{% for pureText in mainPart %}
+	{% if mainPart.pureText %}
 		{% include "mainPartComponents/text/pureText.html" %}
 	{% endif %}
 	<!--
