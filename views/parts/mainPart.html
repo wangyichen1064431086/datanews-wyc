@@ -1,10 +1,14 @@
+{% set dataroot = mainPart %}
 <article>
-	{% if mainPart.pureText %}
+	{% if dataroot.pureText %}
 		{% include "mainPartComponents/text/pureText.html" %}
 	{% endif %}
-	<!--
-	{% if mainPart.purePic %}
-		{% include "mainPartComponents/pic/purePic.html" %}
+
+	{% if dataroot.textAroundPic %}
+		{% include "mainPartComponents/picAndText/textAroundPic.html" %}
 	{% endif %}
-	-->
+
+	{% if dataroot.barGraph %}
+		{% include "mainPartComponents/chart/barGraph.html" %}
+	{% endif %}
 </article>

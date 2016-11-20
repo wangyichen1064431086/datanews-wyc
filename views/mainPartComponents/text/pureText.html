@@ -1,7 +1,7 @@
-{% set comoName = "mainPart.pureText" %}
+{% set dataroot = mainPart.pureText %}
 
-<section class="text">
-	{% for paragraph in comoName.paragraphs %}
+<section>
+	{% for paragraph in dataroot.paragraphs %}
 		<p>
 			{{ paragraph.word }}
 		</p>
@@ -9,9 +9,5 @@
 		<p></p>
 	{% endfor %}
 	
-	<!--
-	{% for item in pureText.images %}
-		<img src="{{item.src}}" alt="{{item.alt}}" />
-	{% endfor %}
-	-->
 </section>
+

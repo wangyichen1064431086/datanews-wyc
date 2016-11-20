@@ -9,6 +9,11 @@ const mkdirp = require('mkdirp');
 const browserSync = require('browser-sync').create();
 const gulp = require('gulp');
 
+const $ = require('gulp-load-plugins')();
+
+const webpack = require('webpack');
+const webpackConfig = require('./webpackConfig.js');
+
 gulp.task('prod',function(){
 	process.env.NODE_ENV = 'prod';
 });
@@ -45,4 +50,59 @@ gulp.task('html',() => {
 			
 });
 
+gulp.task('styles',function(){
+	const DEST = '.tmp/styles';
+
+	return gulp.src('client/styles/*.scss')
+		.pipe($.changed(DEST))
+		.pipe($.plumber())
+		.pipe($.sourcemaps.init({
+			loadMaps:true
+		}))
+		.pipe($.sass({
+			outputStyle:'expanded',
+			precision:10
+		}).on('error',$.sass.logError))
+		.pipe($.sourcemaps.write('./'))
+		.pipe(gulp.dest(DEST))
+		.pipe(browserSync.stream({
+			once:true
+		}));
+});
+
+
+gulp.task('webpack',(done) => {
+	webpack(webpackConfig,function(err,stats){
+		if(err){
+			throw new $.util.PluginErr('webpack',err);
+		}
+		$.util.log('[webpack]',stats.toString({
+			colors:$.util.colors.supportsColor,
+			chunks:false,
+			hash:false,
+			version:false
+		}));
+		browserSync.reload({
+			once:true
+		});
+		done();
+	});
+});
+
+gulp.task('serve',gulp.parallel(
+	'html','styles','webpack', () => {
+		browserSync.init({
+			server:{
+				baseDir:['.tmp'],
+				index:'obor.html',
+				directory:true
+			}
+		});
+
+
+		gulp.watch(['views/**/**/*.html','data/*.json'],gulp.parallel('html'));
+		gulp.watch(['client/styles/*.scss'],gulp.parallel('styles'));
+	}
+
+));
 
