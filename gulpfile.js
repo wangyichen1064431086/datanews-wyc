@@ -94,8 +94,8 @@ gulp.task('serve',gulp.parallel(
 		browserSync.init({
 			server:{
 				baseDir:['.tmp'],
-				index:'obor.html',
-				directory:true
+				index:'obor.html'
+				//directory:true
 			}
 		});
 
