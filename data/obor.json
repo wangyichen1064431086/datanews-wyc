@@ -47,7 +47,8 @@
 			]
 		},
 
-		"barGraph":true
+		"barGraph":true,
+		"lineGraph":true
 
 	},
 			

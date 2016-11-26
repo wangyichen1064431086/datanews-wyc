@@ -75,12 +75,64 @@ const bar1Option = {
 		]*/
 	},
 	grid:{
-
+		show:true,//是否显示直角坐标系网络
+		containLabel:true,//grid区域是否包含坐标轴的刻度标签
+		backgroundColor:'#ddd'
 	},
 	tooltip:{},
 
 	xAxis:{
-		data:[
+		position:'bottom',//x轴的位置
+		type:'category',//可为'value'数值轴，'category'类目轴，'time'时间轴，'log'对数轴
+		name:'品类',//坐标轴名称
+		nameLocation:'end',//坐标轴名称显示位置,可为'start'|'middle'|'end'
+		nameTextStyle:{
+			color:'#888',
+			fontSize:15,
+			fontWeight:600
+		},
+		nameGap:10,//坐标轴名称与轴线间距
+		nameRotate:0,//坐标轴名称旋转角度
+		interverse:false,//是否反向坐标轴
+		boundaryGap:true,//坐标轴两边留白策略，类目轴是Boolean,非类目轴是Array
+		/*
+		min:'dataMin',//对于类目轴无效坐标轴刻度的最大最小值，
+		max:'dataMx',
+		splitNumber:5,//分割段数，对类目轴无效
+		minInterval:1,//自动计算的坐标轴最小间隔大小
+		intervel:5,//强制设置坐标轴分割间隔，不建议使用，不能在类目轴使用
+		logBase:10,//对数轴底数
+		silent:false,//坐标轴是否静态无法交互
+		triggerEvent:true,//坐标轴标签是否相应和触发鼠标事件
+		*/
+		axisLine:{ //坐标轴轴线相关设置
+			show:true,//是否显示坐标轴轴线
+			onZero:true,//是否显示在另一个轴的0刻度上
+			lineStyle:{
+
+			}
+		},
+		axisTick:{ //坐标轴刻度相关设置
+			show:true,//是否显示刻度
+			alignWithLabel:false,//刻度是否和标签对齐
+			intervel:0,//刻度的间隔显示，为1表示隔一个标签显示一个
+			inside:true,//刻度是否朝内
+			length:5,//刻度线长度
+			lineStyle:{//刻度线样式
+
+			}
+		},
+		axisLabel:{//刻度标签相关设置
+			show:true,
+			inside:false,
+			rotate:30,//刻度标签旋转角度
+			margin:10,//刻度标签与轴线间距
+		},
+		splitLine:{//坐标轴在grid区域中的分隔线
+			show:true,//是否显示分隔线，默认数值轴显示，类目轴不显示
+
+		},
+		data:[//类目数据，在类目轴中有效
 			"衬衫",
 			"羊毛衫",
 			"雪纺衫",
