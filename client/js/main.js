@@ -14,3 +14,13 @@ bar1.setOption(bar1Option);
 const line1= echarts.init(document.getElementById('line1'));
 import { line1Option } from './echartOptions/line1Option.js';
 line1.setOption(line1Option);
+
+
+const line2 = echarts.init(document.getElementById('line2'));
+import { line2Option } from './echartOptions/line2Option.js';
+line2.setOption(line2Option);
+
+
+const bar2 = echarts.init(document.getElementById('bar2'));
+import { bar2Option } from './echartOptions/bar2Option.js';
+bar2.setOption(bar2Option);

@@ -8,11 +8,23 @@
 		{% include "mainPartComponents/picAndText/textAroundPic.html" %}
 	{% endif %}
 
-	{% if dataroot.barGraph %}
+	{% if dataroot.barGraph1 %}
 		{% include "mainPartComponents/chart/barGraph.html" %}
 	{% endif %}
 
-	{% if dataroot.lineGraph %}
+	{% if dataroot.lineGraph1 %}
 		{% include "mainPartComponents/chart/lineGraph.html" %}
+	{% endif %}
+
+	{% if dataroot.lineGraph2 %}
+		{% include "mainPartComponents/chart/lineGraph2.html" %}
+	{% endif %}
+
+	{% if dataroot.textOnPic1 %}
+		{% include "mainPartComponents/picAndText/textOnPic.html" %}
+	{% endif %}
+
+	{% if dataroot.barGraph2 %}
+		{% include "mainPartComponents/chart/barGraph2.html" %}
 	{% endif %}
 </article>
