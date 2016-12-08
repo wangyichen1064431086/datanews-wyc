@@ -24,3 +24,8 @@ line2.setOption(line2Option);
 const bar2 = echarts.init(document.getElementById('bar2'));
 import { bar2Option } from './echartOptions/bar2Option.js';
 bar2.setOption(bar2Option);
+
+
+const map1 = echarts.init(document.getElementById('map1'));
+import { map1Option } from './echartOptions/map1Option.js';
+map1.setOption(map1Option);

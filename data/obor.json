@@ -60,7 +60,8 @@
 			]
 		},
 
-		"barGraph2":true
+		"barGraph2":true,
+		"mapGraph1":true
 	},
 			
 	"footerPart":false
