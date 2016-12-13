@@ -94,7 +94,10 @@ gulp.task('serve',gulp.parallel(
 		browserSync.init({
 			server:{
 				baseDir:['.tmp'],
-				index:'obor.html'
+				index:'obor.html',
+				routes:{
+			 		'/mapSource':'mapSource'
+			 	}
 				//directory:true
 			}
 		});
