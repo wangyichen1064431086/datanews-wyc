@@ -61,7 +61,100 @@
 		},
 
 		"barGraph2":true,
-		"mapGraph1":true
+		"mapGraph1":true,
+		"table1":{
+			"caption":"前十大一带一路投资企业，仍以建设和能源类国企为主",
+			"thead":[
+				{
+					"th":"公司"
+				},
+				{
+					"th":"2011~2014年投资金额"
+				}
+			],
+			"tbody":[
+				{
+					"th":"中国交通建设",
+					"tds":[
+						{
+							"td":"<div id='inlineLine1' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"国机集团",
+					"tds":[
+						{
+							"td":"<div id='inlineLine2' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"中国石油天然气",
+					"tds":[
+						{
+							"td":"<div id='inlineLine3' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"中国核工业集团",
+					"tds":[
+						{
+							"td":"<div id='inlineLine4' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"中国电力建设集团",
+					"tds":[
+						{
+							"td":"<div id='inlineLine5' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"中国铁建",
+					"tds":[
+						{
+							"td":"<div id='inlineLine6' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"中国建筑工程",
+					"tds":[
+						{
+							"td":"<div id='inlineLine7' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"中国石油化工集团",
+					"tds":[
+						{
+							"td":"<div id='inlineLine8' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"中国铁路工程",
+					"tds":[
+						{
+							"td":"<div id='inlineLine9' class='inline-chart'></div>"
+						}
+					]
+				},
+				{
+					"th":"北京城建",
+					"tds":[
+						{
+							"td":"<div id='inlineLine10' class='inline-chart'></div>"
+						}
+					]
+				}
+			]
+		}
 	},
 			
 	"footerPart":false
