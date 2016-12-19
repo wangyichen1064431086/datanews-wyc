@@ -154,6 +154,36 @@
 					]
 				}
 			]
+		},
+		"pureText2":{
+			"paragraphs":[
+				{
+					"word":"从投资方面看，国企似乎仍旧走在民企前面。盘古智库学术委员梁海明认为，在一带一路提出之前，已有不少央企、国企和大型民企陆续到海外投资。其中不乏成功案例，但更多的是不大成功的经验。“推出一带一路之后，那些没实力走出去的企业，暂时仍不会走出去，有实力的企业，仍有可能保持观望；挑个好时机，好机遇，好项目，计算好风险，再向外走。”"
+				},
+				{
+					"word":"除了数据上的变化，更值得关注的是一带一路带动中国海外投资的质变。"
+				},
+				{
+					"word":"“一带一路百人论坛”发起人、中央党校国际战略研究所教授赵磊分析，早期中国海外投资是一哄而上、散粗放式，但目前海外投资变得精细，从能源、基础设施，到现在很多企业开始注重技术类、市场类的投资，比如北京汽车原来没有海外投资，现在加强在非洲、东南亚的投资，方式是将整条生产链带出去，既包括上游生产线也包括售后服务。"
+				},
+				{
+					"word":"总之，要让一带一路走得更顺，更多得取决于中国能否真正理解其他国家。"
+				}
+
+			]
+
+		},
+		"video1":{
+			"header":"【视频】：中国力推“一带一路”，沿线国家怎么看？",
+			"abstract":[
+				{
+					"word":"从中国人民大学校长陈雨露、美国马里兰大学史密斯商学院教授阿尼尔·古普塔以及巴基斯坦探路者集团董事长伊克拉姆·塞加尔的视频访谈，看一带一路的挑战和机会。"
+				},
+				{
+					"word":"（请滑动屏幕看视频。若视频无法加载，请<a href='http://www.ftchinese.com/video/1688' target='_blank'>点击此处</a>)"
+				}
+			],
+			"videobody":"<div id='cc_video_8D316418D92154209C33DC5901307461_4707190'><object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0' width='742' height='417' id='cc_8D316418D92154209C33DC5901307461'><param name='movie' value='http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=true'><param value='transparent' name='wmode'><param name='allowFullScreen' value='true'><param name='allowScriptAccess' value='always'><embed src='http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=true' width='742' height='417' name='cc_8D316418D92154209C33DC5901307461' wmode='transparent' allowfullscreen='true' allowscriptaccess='always' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash'></object></div>"
 		}
 	},
 			

@@ -1,0 +1,18 @@
+{% set dataroot = mainPart.video1 %}
+
+<section>
+	<header>
+		{{ dataroot.header }}
+	</header>
+	{% for paragraphs in dataroot.abstract %}
+		<p>
+			{{ paragraphs.word }}
+		</p>
+	{% endfor %}
+	<!--<video src="{{ dataroot.src }}" controls="{{ dataroot.controls }}" width="{{dataroot.width}}" height="{{dataroot.height}}">	
+	</video>
+	-->
+	{% if dataroot.videobody %}
+		{{ dataroot.videobody }}
+	{% endif %}
+</section>
