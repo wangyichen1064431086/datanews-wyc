@@ -1,12 +1,10 @@
 {% set dataroot = mainPart.pureText %}
 
-<section>
+<section class = "marinpart puretext">
 	{% for paragraph in dataroot.paragraphs %}
 		<p>
 			{{ paragraph.word }}
 		</p>
-	{% else %}
-		<p></p>
 	{% endfor %}
 	
 </section>

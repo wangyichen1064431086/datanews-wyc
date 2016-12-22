@@ -15,3 +15,8 @@
 ### geo组件
 如要实现地图上点数据或线数据可视化，在 ECharts 3 中不再建议在地图类型的图表使用series中的 markLine 和 markPoint。应使用在地理坐标系组件geo上的散点图和线图。
 <http://echarts.baidu.com/option.html#geo>
+
+### 图片资源url
+图1："http://i.ftimg.net/picture/8/000053948_piclink.jpg"
+
+图2："http://i.ftimg.net/picture/9/000053949_piclink.jpg"

@@ -3,10 +3,11 @@
 
 
 	"titlePart":{
-		"mainTitle":"一带一路是否改变了中国海外投资行为?",
+		"mainTitle":"“一带一路”是否改变了中国海外投资行为?",
 		"subTitle":"",
 		"dateTime":"2015年8月25日",
-		"authorInfo":"英国《金融时报》报道"
+		"authorInfo":"英国《金融时报》报道",
+		"abstract":"从数据看，一带一路概念提出两年来，尚未对中国的海外投资产生明显影响。但学者提醒，一带一路的重点变化将在明年成形。"
 	},
 
 
@@ -18,6 +19,9 @@
 					"word":"2013年9月，正式掌权仅半年的中国国家主席习近平访问哈萨克斯坦，在纳扎尔巴耶夫大学发表演讲。很少有人会预料到，他将在此提出一个有机会改变21世界经济走向的战略构想。"
 				},
 				{
+					"word":"习近平在演讲中提出“丝绸之路经济带”构想。当时的媒体和学者专家，对此并没有太多联想与解读。一个月后，习近平参与APEC领导人非正式会议，在印尼国会演讲时提出，中国愿意与东盟国家共同建设“21世纪海上丝绸之路”。 "
+				},
+				{
 					"word":"至此，陆上和海上丝路概念成形，“一带一路”正式被搬上台面，成为讨论热点。"
 				}
 			]
@@ -26,12 +30,8 @@
 		"textAroundPic": {
 			"images":[
 				{
-					"src":"http://i.ftimg.net/picture/8/000053948_piclink.jpg",
-					"alt":"XiVisitKz"
-				},
-				{
 					"src":"http://i.ftimg.net/picture/9/000053949_piclink.jpg",
-					"alt":"chinaEffect"
+					"alt":"XiVisitKz"
 				}
 			],
 			"paragraphs":[
@@ -47,7 +47,7 @@
 			]
 		},
 
-		"barGraph1":true,
+		"barGraph1":false,
 		"lineGraph1":true,
 		"lineGraph2":true,
 

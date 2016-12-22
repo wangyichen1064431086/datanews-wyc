@@ -16,11 +16,11 @@ import { line_inline7Option } from './echartOptions/line_inline7Option.js';
 import { line_inline8Option } from './echartOptions/line_inline8Option.js';
 import { line_inline9Option } from './echartOptions/line_inline9Option.js';
 import { line_inline10Option } from './echartOptions/line_inline10Option.js';
-
+/*
 const bar1 = echarts.init(document.getElementById('bar1'));
 //const bar1Option = require('./echartOptions/bar1Option.js');//使用这种办法必须加上前缀./，不然就逐级查找node_modules
 bar1.setOption(bar1Option);
-
+*/
 
 const line1= echarts.init(document.getElementById('line1'));
 line1.setOption(line1Option);

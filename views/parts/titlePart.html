@@ -23,7 +23,9 @@
 	</p>
 	{% endif %}
 
-	<p class="words">
-		从数据看，一带一路概念提出两年来，尚未对中国的海外投资产生明显影响。但学者提醒，一带一路的重点变化将在明年成形。
+	{% if titlePart.abstract %}
+	<p class="abstract">
+		{{titlePart.abstract}}
 	</p>
+	{% endif %}
 </header>
