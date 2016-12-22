@@ -51,18 +51,20 @@ const line2Option = {
 			showAllSymbol:true,
 			itemStyle:{
 				normal:{
-					color:'#700'
+					color:'#9e2f50',
+					borderColor:'rgba(158,47,80,0)',
+					borderWidth:10
 				},
 				emphasis:{
-					color:'#700',
-					borderColor:'rgba(85,50,50,0.5)',
+					color:'#9e2f50',
+					borderColor:'rgba(158,47,80,0.5)',
 					borderWidth:10,
 					borderType:'solid'
 				}
 			},
 			lineStyle:{
 				normal:{
-					color:'#700',
+					color:'#9e2f50',
 					width:2,
 					type:'solid'
 				}

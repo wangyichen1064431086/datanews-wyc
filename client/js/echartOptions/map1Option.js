@@ -1,5 +1,10 @@
 const map1Option ={
-
+	title:{
+		text:'2013年至今，中国对一带一路国家的投资概况',
+		subtext:'(请缩放屏幕，看地图上详细资讯)',
+		left:'center',
+		top:'top'
+	},
 	// 如要实现地图上区域数据可视化：应使用visualMap组件
 	visualMap:{
 		type:'continuous',

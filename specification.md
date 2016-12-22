@@ -20,3 +20,8 @@
 图1："http://i.ftimg.net/picture/8/000053948_piclink.jpg"
 
 图2："http://i.ftimg.net/picture/9/000053949_piclink.jpg"
+
+### 色彩搭配
+主色1： '#9e2f50'  'rgba(158,47,80,0.5)'
+
+主色2： '#4781aa'  'rgba(71,129,170,0.5)'

@@ -1,27 +1,29 @@
 {% set dataroot = mainPart %}
 <article>
-	{% if dataroot.pureText %}
-		{% include "mainPartComponents/text/pureText.html" %}
+	{% if dataroot.pureText1 %}
+		{% include "mainPartComponents/text/pureText1.html" %}
 	{% endif %}
 
 	{% if dataroot.textAroundPic %}
 		{% include "mainPartComponents/picAndText/textAroundPic.html" %}
 	{% endif %}
 
-	{% if dataroot.barGraph1 %}
-		{% include "mainPartComponents/chart/barGraph.html" %}
-	{% endif %}
-
 	{% if dataroot.lineGraph1 %}
-		{% include "mainPartComponents/chart/lineGraph.html" %}
+		{% include "mainPartComponents/chart/lineGraph1.html" %}
 	{% endif %}
 
 	{% if dataroot.lineGraph2 %}
 		{% include "mainPartComponents/chart/lineGraph2.html" %}
 	{% endif %}
 
+	{#
 	{% if dataroot.textOnPic1 %}
 		{% include "mainPartComponents/picAndText/textOnPic.html" %}
+	{% endif %}
+	#}
+
+	{% if dataroot.pureText2 %}
+		{% include "mainPartComponents/text/pureText2.html" %}
 	{% endif %}
 
 	{% if dataroot.barGraph2 %}
@@ -36,8 +38,8 @@
 		{% include "mainPartComponents/table/table1.html" %}
 	{% endif %}
 
-	{% if dataroot.pureText2 %}
-		{% include "mainPartComponents/text/pureText2.html" %}
+	{% if dataroot.pureText3 %}
+		{% include "mainPartComponents/text/pureText3.html" %}
 	{% endif %}
 
 	{% if dataroot.video1 %}

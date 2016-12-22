@@ -67,18 +67,20 @@ const line1Option = {
 			},*/
 			itemStyle:{//折线拐点标志的样式
 				normal:{
-					color:'#700'
+					color:'#9e2f50',
+					borderColor:'rgba(158,47,80,0)',
+					borderWidth:10
 				},
 				emphasis:{
-					color:'#700',
-					borderColor:'rgba(85,50,50,0.5)',
+					color:'#9e2f50',
+					borderColor:'rgba(158,47,80,0.5)',
 					borderWidth:10,
 					borderType:'solid'
 				}
 			},
 			lineStyle:{
 				normal:{
-					color:'#700',
+					color:'#9e2f50',
 					width:2,
 					type:'solid'
 				}
@@ -103,18 +105,20 @@ const line1Option = {
 			},*/
 			itemStyle:{//折线拐点标志的样式
 				normal:{
-					color:'#007'
+					color:'#4781aa',
+					borderColor:'rgba(71,129,170,0)',
+					borderWidth:10
 				},
 				emphasis:{
-					color:'#007',
-					borderColor:'rgba(50,50,85,0.5)',
+					color:'#4781aa',
+					borderColor:'rgba(71,129,170,0.5)',
 					borderWidth:10,
 					borderType:'solid'
 				}
 			},
 			lineStyle:{
 				normal:{
-					color:'#007',
+					color:'#4781aa',
 					width:2,
 					type:'solid'
 				}

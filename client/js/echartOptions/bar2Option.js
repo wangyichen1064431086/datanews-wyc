@@ -8,7 +8,7 @@ const bar2Option = {
 	},
  
 	legend: {
-		data: ['一带一路国家投资金额占比','其他国家投资金额占比'],
+		data: ['中国对一带一路国家的投资金额比例','中国对其他国家的投资金额比例'],
 		top:55,
 		right:'30%',
 		orient:'vertical',
@@ -19,14 +19,14 @@ const bar2Option = {
 		selectedMode:true,//是否可以通过点击图例改变系列的显示状态
 		inactiveColor:'gray',//图例关闭时的颜色
 		selected:{//图例选中状态表
-			'一带一路国家投资金额占比':true,
-			'其他国家投资金额占比':true
+			'中国对一带一路国家的投资金额比例':true,
+			'中国对其他国家的投资金额比例':true
 		}
 	},
 	grid:{
 		show:true,//是否显示直角坐标系网络
-		containLabel:true,//grid区域是否包含坐标轴的刻度标签
-		backgroundColor:'#ddd'
+		//containLabel:true,//grid区域是否包含坐标轴的刻度标签
+		//backgroundColor:'#ddd'
 	},
 	tooltip:{
 		trigger:'item',
@@ -117,14 +117,31 @@ const bar2Option = {
 	},
 	series:[
 		{
-			name:'一带一路国家投资金额占比',
+			name:'中国对一带一路国家的投资金额比例',
 			type:'bar',
-			data:[52,49,53,33,39,35,39,30,40,31,27]
+			data:[52,49,53,33,39,35,39,30,40,31,27],
+			itemStyle:{
+				normal:{
+					color:'rgba(158,47,80,0.8)'
+				},
+				emphasis:{
+					color:'#9e2f50'
+				}
+			}
+
 		},
 		{
-			name:'其他国家投资金额占比',
+			name:'中国对其他国家的投资金额比例',
 			type:'bar',
-			data:[48,51,47,67,61,65,61,70,60,69,73]
+			data:[48,51,47,67,61,65,61,70,60,69,73],
+			itemStyle:{
+				normal:{
+					color:'rgba(71,129,170,0.8)'
+				},
+				emphasis:{
+					color:'#4781aa'
+				}
+			}
 		}
 	]
 };

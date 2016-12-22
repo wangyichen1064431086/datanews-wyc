@@ -1,4 +1,7 @@
 @charset "UTF-8";
+body {
+	background:#fff1e0;
+}
 header, article {
 	margin:20px auto;
 	width:100%;
@@ -30,7 +33,7 @@ header, article {
 	max-width:600px;
 }
 
-.mainpart {
+.maincompo {
 	margin:30px 5px;
 	max-width:960px;
 	p {
@@ -41,23 +44,22 @@ header, article {
 	}
 }
 
-.textAroundPic {
+
+.textaroundpic {
 	img {
 		margin:0 auto;
 		display:block;
 		width:100%;
 		max-width:500px;
-
 	}
 }
 
 
-
 .chart {
-	margin:20px auto;
+	margin:0 auto;
 	width:100%;
-	max-width:960px;
-	min-height:640px;
+	max-width:660px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
+	min-height:440px;//可以改为height=2/3width
 }
 
 .table {
