@@ -25,3 +25,55 @@
 主色1： '#9e2f50'  'rgba(158,47,80,0.5)'
 
 主色2： '#4781aa'  'rgba(71,129,170,0.5)'
+
+
+const data=[
+			{name:'Russia',value:'103'},
+			{name:'Kazakhstan',value:'38'},
+			{name:'Pakistan',value:'143.2'},
+			{name:'Bangladesh',value:'37.7'},
+			{name:'Nepal',value:'17.4'},
+			{name:'India',value:'36.1'},
+			{name:'Thailand',value:'11.6'},
+			{name:'Cambodia',value:'19.1'},
+			{name:'Singapore',value:'37.3'},
+			{name:'Malaysia',value:'64.5'},
+			{name:'Philippines',value:'10'},
+			{name:'Indonesia',value:'73.7'},
+			{name:'Brunei',value:'2'},
+			{name:'Croatia',value:'1.3'},
+			{name:'Egypt',value:'36.9'},
+			{name:'Iran',value:'6.9'},
+			{name:'Iraq',value:'28.6'},
+			{name:'Israel',value:'54.7'},
+			{name:'Jordan',value:'6.2'},
+			{name:'Kuwait',value:'4.6'},
+			{name:'Kyrghyzstan',value:'38'},
+			{name:'Laos',value:'0'},
+			{name:'Macedonia',value:'4'},
+			{name:'Mongolia',value:'0'},
+			{name:'Republic of Montenegro',value:'11.2'},
+			{name: "Myanmar",value: "3"}, 
+			{name: "Oman",value: "3"}, 
+			{name: "Poland",value: "3.9"},
+			{name: "Katar",value: "1.7"}, 
+			{name: "Rumania",value: "5.4"}, 
+			{name: "Saudi Arabia",value: "47.2"}, 
+			{name: "serbia", value: "19.2"}, 
+			{name: "Singapore",value: "37.3"},
+			{name: "Sri Lanka",value: "37.1"}, 
+			{name: "Syria",value: "0"}, 
+			{name: "Tajikistan", value: "2.5"}, 
+			{name: "Turkey ",value: "4.8"}, 
+			{name: "Turkmenistan",value: "6"}, 
+			{name: "The United Arab Emirates",value: "13.8"},
+			{name: "Ukraine",value: "0"},
+			{name: "Uzbekistan",value: "4.4"}, 
+			{name: "Vietnam",value: "0"}, 
+			{name: "Yemen",value: "5.1"}
+
+		];
+
+const geoCoorMap = {
+	
+}
