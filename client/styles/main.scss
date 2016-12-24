@@ -36,6 +36,11 @@ header, article {
 .maincompo {
 	margin:30px 5px;
 	max-width:960px;
+	header {
+		font-weight:900;
+		font-size:18px;
+		font-family:'黑体','sans-serif';
+	}
 	p {
 		font-size:17px;
 		line-height:162%;
@@ -62,13 +67,21 @@ header, article {
 	min-height:440px;//可以改为height=2/3width
 }
 
-.table {
-	margin:20px auto;
+.map {
+	margin:0 auto;
 	width:100%;
-	max-width:960px;
+	max-width:960px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
+	min-height:640px;//可以改为height=2/3width
+}
+.table {
+	margin:0 auto;
+	width:100%;
+	max-width:660px;
 	border-collapse:collapse;
 	caption {
-		font:bold 21px sans-serif;
+		font-weight:900;
+		font-size:18px;
+		font-family:'黑体','sans-serif';
 	}
 	thead tr {
 		border-top: 2px solid gray;
@@ -104,6 +117,15 @@ header, article {
 	right:10px;
 	bottom:10px;
 	max-width:422px;
+}
+
+.video{
+	object {
+		width:742;
+		height:471;
+		margin:0 auto;
+		display:block;
+	}
 }
 /*
 .videosource{

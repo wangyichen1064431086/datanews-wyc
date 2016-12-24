@@ -1,18 +1,35 @@
 {% set dataroot = mainPart.video1 %}
 
-<section>
+<section class="maincompo video">
 	<header>
 		{{ dataroot.header }}
 	</header>
-	{% for paragraphs in dataroot.abstract %}
+	{% for paragraph in dataroot.abstract %}
 		<p>
-			{{ paragraphs.word }}
+			{{ paragraph.word }}
 		</p>
 	{% endfor %}
 	<!--<video src="{{ dataroot.src }}" controls="{{ dataroot.controls }}" width="{{dataroot.width}}" height="{{dataroot.height}}">	
 	</video>
 	-->
-	{% if dataroot.videobody %}
-		{{ dataroot.videobody }}
+	
+	<div class='videosource'>
+	{% if dataroot.byObject %}
+		{% set dataroot1 = dataroot.byObject %}
+		<object width={{dataroot1.width}} height={{dataroot1.height}}>
+			{% for param in dataroot1.params%}
+				<param name={{param.name}} value={{param.value}}>
+			{% endfor %}
+		</object>
 	{% endif %}
+	{% if dataroot.byVideo %}
+		{% set dataroot1 = dataroot.byVideo %}
+		<video src="{{ dataroot.src }}" controls="{{ dataroot.controls }}" width="{{dataroot.width}}" height="{{dataroot.height}}">	
+			{% for param in dataroot1.params%}
+				<source src={{param.src}} type={{param.type}}>
+			{% endfor %}
+		</video>
+	{% endif %}
+	</div>
+	
 </section>
