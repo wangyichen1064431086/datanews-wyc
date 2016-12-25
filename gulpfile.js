@@ -109,3 +109,28 @@ gulp.task('serve',gulp.parallel(
 
 ));
 
+gulp.task('smoosh',() => {
+	return gulp.src('.tmp/obor.html')
+		.pipe($.smoosher({
+			ignoreFilesNotFound:true
+		}))
+		.pipe(gulp.dest('dist'));
+});
+gulp.task('optimize',() => {//不知为何这个任务没法用
+	return gulp.src('dist/obor.html')
+		//.pipe($.useref())
+		//.pipe($.if('*.js',$.uglify()))
+		//.pipe($.if('*.css',$.minify()))
+		.pipe($.htmlmin({
+			collapseWhitespace:true,
+			removeComments:true,
+			removeAttributeQuotes:true,
+			minifyJS:true,
+			minifyCSS:true
+		}))
+		.pipe(gulp.dest('result'));
+});
+gulp.task('build',gulp.series(
+	gulp.parallel('html','styles','webpack'),
+	'smoosh'
+));
