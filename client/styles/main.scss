@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import "o-grid/main";
+
 body {
 	background:#fff1e0;
 }
@@ -40,12 +42,23 @@ header, article {
 		font-weight:900;
 		font-size:18px;
 		font-family:'黑体','sans-serif';
+		/*
+		@include oGridRespondTo(L){
+			font-size:36px;
+		}
+		*/
 	}
 	p {
-		font-size:17px;
+		font-size:18px;
 		line-height:162%;
 		padding:10px 0;
 		margin:0;
+		
+		@include oGridRespondTo(M){
+			font-size:36px;
+			line-height:162%;
+		}
+		
 	}
 }
 

@@ -188,7 +188,7 @@
 					"word":"从中国人民大学校长陈雨露、美国马里兰大学史密斯商学院教授阿尼尔·古普塔以及巴基斯坦探路者集团董事长伊克拉姆·塞加尔的视频访谈，看一带一路的挑战和机会。"
 				},
 				{
-					"word":"（请滑动屏幕看视频。若视频无法加载，请<a href='http://www.ftchinese.com/video/1688' target='_blank'>点击此处</a>)"
+					"word":"（请滑动屏幕看视频。若视频无法加载，请<a href='http://www.ftchinese.com/video/1688' target='_blank'>点击此处</a>）"
 				}
 			],
 			"byObject":{
@@ -197,7 +197,7 @@
 				"params":[
 					{
 						"name":"movie",
-						"value":"http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=false"
+						"value":"'http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=false'"
 					},
 					{
 						"name":"wmode",

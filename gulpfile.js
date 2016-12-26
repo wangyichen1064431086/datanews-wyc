@@ -13,6 +13,8 @@ const $ = require('gulp-load-plugins')();
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpackConfig.js');
+const del = require('del');
+//const htmlmin = require('gulp-html-minifier');
 
 gulp.task('prod',function(){
 	process.env.NODE_ENV = 'prod';
@@ -61,7 +63,8 @@ gulp.task('styles',function(){
 		}))
 		.pipe($.sass({
 			outputStyle:'expanded',
-			precision:10
+			precision:10,
+			includePaths:['bower_components']
 		}).on('error',$.sass.logError))
 		.pipe($.sourcemaps.write('./'))
 		.pipe(gulp.dest(DEST))
@@ -109,14 +112,32 @@ gulp.task('serve',gulp.parallel(
 
 ));
 
-gulp.task('smoosh',() => {
+gulp.task('smoosh',function(){
+	
+	const destDir = 'dist';
+	if(!isThere(destDir)){
+		mkdirp(destDir,(err) => {
+			if(err) {
+				console.log(err);
+			}
+		});
+	}
 	return gulp.src('.tmp/obor.html')
 		.pipe($.smoosher({
 			ignoreFilesNotFound:true
 		}))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest(destDir));
 });
-gulp.task('optimize',() => {//不知为何这个任务没法用
+
+gulp.task('minify',function(){//不知为何这个任务有时候没法用	
+	const destDir = 'deploy';
+	if(!isThere(destDir)){
+		mkdirp(destDir,(err) => {
+			if(err) {
+				console.log(err);
+			}
+		});
+	}	
 	return gulp.src('dist/obor.html')
 		//.pipe($.useref())
 		//.pipe($.if('*.js',$.uglify()))
@@ -124,13 +145,36 @@ gulp.task('optimize',() => {//不知为何这个任务没法用
 		.pipe($.htmlmin({
 			collapseWhitespace:true,
 			removeComments:true,
-			removeAttributeQuotes:true,
+			//removeAttributeQuotes:false,
 			minifyJS:true,
-			minifyCSS:true
+			minifyCSS:true,
+			//ignoreCustomFragments:[ /^(<object)[.\n\r]*(\/object>)$/m ]
+			//ignoreCustomFragments:[ /^(<param).*(>)$/g ]
+			//ignoreCustomFragments:[ /^(http).*(>)$/ ]
+			//maxLineLength:10000,
+			//html5:false
 		}))
-		.pipe(gulp.dest('result'));
+		.pipe($.size({
+			gzip:true,
+			showFiles:true,
+			showTotal:true
+		}))
+		.pipe(gulp.dest(destDir));//此处这个destDir必须要是已经存在的
+});
+
+
+
+///疑问：为什么smoosh和minify执行完会挂在那里呢
+
+gulp.task('delete',(done)=>{
+	del(['.tmp/**','dist/**','result/**']).then(() =>{
+		console.log('Files had been deleted');
+	});
+	done();
 });
 gulp.task('build',gulp.series(
+	'delete',
 	gulp.parallel('html','styles','webpack'),
-	'smoosh'
+	'smoosh',
+	'minify'
 ));
