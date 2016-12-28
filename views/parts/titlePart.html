@@ -1,4 +1,4 @@
-<header>
+<header class = "titlepart">
  	{% if titlePart.mainTitle %}
 	<h1 class="mainTitle">
 		{{titlePart.mainTitle}}
@@ -12,9 +12,9 @@
 	{% endif %}
 
 	{% if titlePart.dateTime %}
-	<p class="dateTime">
+	<time class="dateTime">
 		{{titlePart.dateTime}}
-	</p>	
+	</time>	
 	{% endif %}
 
 	{% if titlePart.authorInfo %}

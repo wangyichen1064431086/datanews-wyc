@@ -3,45 +3,47 @@
 
 body {
 	background:#fff1e0;
+	margin:0px;
+	font-family: "Helvetica Neue", "Lucida Grande", Verdana, "PingFang SC", "PingFang TC", "Hiragino Sans GB", "Heiti SC", "Heiti TC", "WenQuanYi Micro Hei", "Microsoft YaHei", "Microsoft JhengHei", STHeiti, sans-serif;
+
 }
 header, article {
-	margin:20px auto;
-	width:100%;
-	max-width:960px;
+	padding:0px;
+	margin:20px 10px;
 }
-.mainTitle {
+.titlepart {
 	text-align:center;
-	font-family: Helvetica Neue,Helvetica,Hiragino Sans GB,Heiti SC,STHeiti;
-	font-weight:bold;
-	padding:10px 0;
-	margin:0
-}
-.dateTime {
-	text-align:center;
-	padding:10px 0;
-	margin:0;
-}
-.authorInfo {
-	text-align:center;
-	padding:10px 0;
-	margin:0;
-}
-.abstract {
-	padding:10px 5px;
-	margin:0 auto;
-	font-size:14px;
-	line-height:162%;
-	width:100%;
-	max-width:600px;
+	.mainTitle {
+		font-family:"Helvetica Neue", "Lucida Grande", Verdana, "PingFang SC", "PingFang TC", "Hiragino Sans GB", "Heiti SC", "Heiti TC", "WenQuanYi Micro Hei", "Microsoft YaHei", "Microsoft JhengHei", STHeiti, sans-serif;
+		font-weight:bold;
+		padding:10px;
+		margin:0;
+	}
+	.dateTime {
+		padding:10px;
+		margin:0
+	}
+	.authorInfo {
+		padding:10px;
+		margin:0;
+	}
+	.abstract {
+		padding:10px;
+		margin:0;
+		font-size:16px;
+		line-height:162%;
+	}
 }
 
 .maincompo {
-	margin:30px 5px;
-	max-width:960px;
+	margin:0px;
+	margin-bottom:20px;
+	//max-width:960px;
 	header {
 		font-weight:900;
-		font-size:18px;
-		font-family:'黑体','sans-serif';
+		font-size:24px;
+		margin:0;
+		padding:0;
 		/*
 		@include oGridRespondTo(L){
 			font-size:36px;
@@ -55,65 +57,84 @@ header, article {
 		margin:0;
 		
 		@include oGridRespondTo(M){
-			font-size:36px;
-			line-height:162%;
+			
 		}
 		
 	}
-}
 
 
-.textaroundpic {
-	img {
+	&.textaroundpic {
+		img {
+			margin:0 auto;
+			display:block;
+			width:100%;
+
+		}
+	}
+
+	.chart {
 		margin:0 auto;
-		display:block;
-		width:100%;
-		max-width:500px;
+		//width:100%;
+		max-width:660px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
+		min-height:360px;//可以改为height=2/3width
 	}
+
+	.map {
+		margin:0 auto;
+		//width:100%;
+		max-width:960px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
+		min-height:360px;//可以改为height=2/3width
+	}
+
+	.table {
+		margin:0 auto;
+		//width:100%;
+		max-width:660px;
+		border-collapse:collapse;
+		caption {
+			font-weight:900;
+			font-size:18px;
+			//font-family:'黑体','sans-serif';
+		}
+		thead tr {
+			border-top: 2px solid gray;
+			border-bottom:2px solid gray;
+			height:80px;
+		}
+		tbody tr {
+			border-bottom:1px solid gray;
+			height:60px;
+		}
+		.inline-chart{
+			margin:10px auto;
+			width:100%;
+			max-width:400px;
+			min-width:200px;
+			height:60px;
+		}
+	}
+
+
+	&.video{
+		object {
+			//width:742;
+			//height:471;
+			width:355;
+			height:225;
+			margin:0 auto;
+			display:block;
+		}
+	}
+
 }
 
 
-.chart {
-	margin:0 auto;
-	width:100%;
-	max-width:660px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
-	min-height:440px;//可以改为height=2/3width
-}
 
-.map {
-	margin:0 auto;
-	width:100%;
-	max-width:960px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
-	min-height:640px;//可以改为height=2/3width
-}
-.table {
-	margin:0 auto;
-	width:100%;
-	max-width:660px;
-	border-collapse:collapse;
-	caption {
-		font-weight:900;
-		font-size:18px;
-		font-family:'黑体','sans-serif';
-	}
-	thead tr {
-		border-top: 2px solid gray;
-		border-bottom:2px solid gray;
-		height:80px;
-	}
-	tbody tr {
-		border-bottom:1px solid gray;
-		height:60px;
-	}
-	.inline-chart{
-		margin:10px auto;
-		width:100%;
-		width:100%;
-		max-width:400px;
-		min-width:200px;
-		height:60px;
-	}
-}
+
+
+
+
+
 .pic-asbg {
 	position:relative;
 	background-repeat:no-repeat;
@@ -132,14 +153,7 @@ header, article {
 	max-width:422px;
 }
 
-.video{
-	object {
-		width:742;
-		height:471;
-		margin:0 auto;
-		display:block;
-	}
-}
+
 /*
 .videosource{
 	margin:20px auto;

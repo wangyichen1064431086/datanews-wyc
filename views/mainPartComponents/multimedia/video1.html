@@ -16,11 +16,24 @@
 	<div class='videosource'>
 	{% if dataroot.byObject %}
 		{% set dataroot1 = dataroot.byObject %}
+		{#
 		<object width={{dataroot1.width}} height={{dataroot1.height}}>
 			{% for param in dataroot1.params%}
 				<param name={{param.name}} value={{param.value}}>
 			{% endfor %}
 		</object>
+		#}
+		
+		<object codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0' width='355' height='255' id='cc_8D316418D92154209C33DC5901307461' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' >
+			<param name='movie' value='http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=false'>
+			<param value='transparent' name='wmode'>
+			<param name='allowFullScreen' value='true'>
+			<param name='allowScriptAccess' value='always'>
+			<embed src='http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=false' width='355' height='255' name='cc_8D316418D92154209C33DC5901307461' wmode='transparent' allowfullscreen='true' allowscriptaccess='always' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash'>
+		</object>
+		
+		
+
 	{% endif %}
 	{% if dataroot.byVideo %}
 		{% set dataroot1 = dataroot.byVideo %}
