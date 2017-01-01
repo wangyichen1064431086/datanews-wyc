@@ -15,9 +15,11 @@ const line2Option = {
 	xAxis:{
 		type:'category',
 		name:'年份',
+		nameGap:5,
 		position:'bottom',
 		axisLabel:{
-			rotate:0
+			rotate:45,
+			interval:0
 		},
 		axisLine:{
 			onZero:true

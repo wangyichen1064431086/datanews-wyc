@@ -10,6 +10,10 @@ body {
 header, article {
 	padding:0px;
 	margin:20px 10px;
+	@include oGridRespondTo(M){
+		width:740px;
+		margin:20px auto
+	}
 }
 .titlepart {
 	text-align:center;
@@ -22,7 +26,7 @@ header, article {
 	}
 	.dateTime {
 		padding:10px;
-		margin:0
+		margin:0;
 	}
 	.authorInfo {
 		padding:10px;
@@ -30,9 +34,12 @@ header, article {
 	}
 	.abstract {
 		padding:10px;
-		margin:0;
+		margin:0 auto;
 		font-size:16px;
 		line-height:162%;
+		@include oGridRespondTo(M){
+			width:650px;
+		}
 	}
 }
 
@@ -45,21 +52,13 @@ header, article {
 		font-size:24px;
 		margin:0;
 		padding:0;
-		/*
-		@include oGridRespondTo(L){
-			font-size:36px;
-		}
-		*/
+		
 	}
 	p {
 		font-size:18px;
 		line-height:162%;
 		padding:10px 0;
 		margin:0;
-		
-		@include oGridRespondTo(M){
-			
-		}
 		
 	}
 
@@ -69,29 +68,44 @@ header, article {
 			margin:0 auto;
 			display:block;
 			width:100%;
+			@include oGridRespondTo(M){
+				width:400px;
+			}
 
 		}
 	}
 
 	.chart {
 		margin:0 auto;
-		//width:100%;
-		max-width:660px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
+		max-width:660px;
 		min-height:360px;//可以改为height=2/3width
+		@include oGridRespondTo(M){
+			width:660px;
+			height:440px;
+		}
 	}
 
 	.map {
 		margin:0 auto;
 		//width:100%;
-		max-width:960px; /*这里要注意区分高清屏，比如iphone6,屏幕宽375,但实际像素确实750*/
+		max-width:740px; 
 		min-height:360px;//可以改为height=2/3width
+		@include oGridRespondTo(M){
+			width:740px;
+			height:500px;
+		}
+		margin-bottom:40px;
 	}
 
 	.table {
 		margin:0 auto;
-		//width:100%;
-		max-width:660px;
+		width:100%;
+		//max-width:660px;
 		border-collapse:collapse;
+		@include oGridRespondTo(M){
+			width:650px;
+			height:960px;
+		}
 		caption {
 			font-weight:900;
 			font-size:18px;
@@ -117,14 +131,20 @@ header, article {
 
 
 	&.video{
-		object {
-			//width:742;
-			//height:471;
-			width:355;
-			height:225;
-			margin:0 auto;
-			display:block;
+		header{
+			font-weight:900;
+			font-size:18px;
 		}
+		.videosource{
+			width:355px;
+			height:225px;
+			margin:0 auto;
+			@include oGridRespondTo(M){
+				width:600px;
+				height:380px;
+			}
+		}
+	
 	}
 
 }

@@ -15,9 +15,11 @@ const line1Option = {
 	xAxis:{
 		type:'category',
 		name:'季度',
+		nameGap:5,
 		position:'bottom',
 		axisLabel:{
-			rotate:45
+			rotate:45,
+			interval:1
 		},
 		axisLine:{
 			onZero:false
@@ -52,19 +54,6 @@ const line1Option = {
 			symbol:'circle',
 			symbolSize:8,
 			showAllSymbol:true,//标志图形默认会随坐标轴标签间隔隐藏策略而隐藏，如需全部显示，则可将showAllSymbol设为true
-			/*
-			label:{//用toolTip组件代替
-				normal:{
-					show:false
-				},
-				emphasis:{
-					show:true,
-					formatter:'{b}\n 出口同比增长率:{c}%',
-					textStyle:{
-						color:'#000',
-					}
-				}
-			},*/
 			itemStyle:{//折线拐点标志的样式
 				normal:{
 					color:'#9e2f50',

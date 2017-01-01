@@ -115,7 +115,7 @@ const geoCoordMap = {
 			"塔吉克斯坦":[72.153883,38.292747],
 			"土耳其 ":[35.469673,39.014079],
 			"土库曼斯坦":[58.173087,39.46943],
-			"阿联酋":[35.469673,39.014079],
+			"阿联酋":[54.333514,23.595508],
 			"乌克兰":[31.275089,49.448635],
 			"乌兹别克斯坦":[62.734467,41.577487],
 			"越南":[105.305812,19.347374],
@@ -143,8 +143,12 @@ const convertData = function (data) {
 
 const map1Option ={
 	title:{
-		text:'2013年至今，中国对一带一路国家的投资概况',
+		text:'2013年至今，\n中国对一带一路国家的投资概况',
 		subtext:'(请缩放屏幕，看地图上详细资讯)',
+		subtextStyle:{
+			color:'#333',
+			fontSize:14
+		},
 		left:'center',
 		top:'top'
 	},
@@ -165,7 +169,14 @@ const map1Option ={
 	// 如要实现地图上点数据或线数据可视化：在 ECharts 3 中不再建议在地图类型的图表使用series中的 markLine 和 markPoint。应使用在地理坐标系组件geo上的散点图和线图。
 	geo:{
 		map:'world',
+		center:[72.168543,35.30823],
+		zoom:2,
 		roam:'scale',
+		scaleLimit:{
+			min:2,
+			max:5
+		},
+		top:100,
 		label:{
 			emphasis:{
 				show:false
@@ -202,7 +213,7 @@ const map1Option ={
 			symbol:'circle',
 			data:convertData(data),
 			symbolSize: function(val){
-				return val[2]/2;
+				return 5* Math.sqrt(val[2]);
 			},
 
 			itemStyle:{

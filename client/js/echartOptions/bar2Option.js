@@ -2,14 +2,16 @@ const bar2Option = {
 
 	title:{/*标题组件*/
 		show:true,//Bool|default:true|是否显示标题组件
-		text:"一带一路国家占整体中国海外投资金额占比 仍有增长空间",
+		text:"中国对一带一路国家投资金额占\n中国海外投资总金额比例 仍有增长空间",
 		left:'center',
-		top:'top'
+		top:'top',
+		bottom:'90%'
+
 	},
  
 	legend: {
 		data: ['中国对一带一路国家的投资金额比例','中国对其他国家的投资金额比例'],
-		top:55,
+		top:65,
 		right:'5%',
 		orient:'vertical',
 		padding:5,
@@ -26,10 +28,13 @@ const bar2Option = {
 	grid:{
 		show:true,//是否显示直角坐标系网络
 		//containLabel:true,//grid区域是否包含坐标轴的刻度标签
-		//backgroundColor:'#ddd'
+		//backgroundColor:'#ddd',
+		top:65
 	},
 	tooltip:{
 		trigger:'item',
+		
+		//position:'top',
 		confine:true,
 		formatter:'{b}<br/>{a}{c}%'
 	},
@@ -39,12 +44,13 @@ const bar2Option = {
 		type:'category',
 		name:'年份',//坐标轴名称
 		nameLocation:'end',
+		/*
 		nameTextStyle:{
 			color:'#888',
 			fontSize:15,
 			fontWeight:600
-		},
-		nameGap:10,
+		},*/
+		nameGap:5,
 		nameRotate:0,
 		boundaryGap:true,
 		axisLine:{ //坐标轴轴线相关设置
@@ -90,12 +96,14 @@ const bar2Option = {
 
 	yAxis:{
 		name:'百分比%',
+		/*
 		nameTextStyle:{
 			color:'#888',
 			fontSize:15,
 			fontWeight:600
 		},
-		nameGap:10,
+		*/
+		nameGap:5,
 		min:0,
 		max:100,
 		intervel:20,
