@@ -8,7 +8,7 @@ const line2Option = {
 	legend:{
 		orient:'vertical',
 		data:['中国非金融类对外直接投资同比增长率'],
-		right:100,
+		right:'5%',
 		top:100
 	},
 

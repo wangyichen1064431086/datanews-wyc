@@ -10,7 +10,7 @@ const bar2Option = {
 	legend: {
 		data: ['中国对一带一路国家的投资金额比例','中国对其他国家的投资金额比例'],
 		top:55,
-		right:'30%',
+		right:'5%',
 		orient:'vertical',
 		padding:5,
 		itemGap:10,//图例每项之间的间隔

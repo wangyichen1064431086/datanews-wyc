@@ -8,7 +8,7 @@ const line1Option = {
 	legend:{
 		orient:'vertical',
 		data:['出口同比增长率','GDP同比增长率'],
-		right:100,
+		right:'5%',
 		top:100
 	},
 
