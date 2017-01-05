@@ -17,7 +17,7 @@ var env = new nunjucks.Environment(
 	}
 );
 
-function render(template,context){//template为views下的html文件名称，context是json数据文件名称，destName是成功后返回的对象中需要用到的值
+function render(template,context){//template为views下的html文件名称，context是object数据，destName是成功后返回的对象中需要用到的值
 	return new Promise(function(resolve,reject){
 		env.render(template,context,function(err,result){
 			if(err){

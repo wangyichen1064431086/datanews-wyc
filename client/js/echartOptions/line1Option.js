@@ -1,3 +1,36 @@
+import {control} from '../control.js';
+const opts = {
+	tooltipShow: true,
+	legendSelect: true,
+	itemstyle1N: {
+		color:'#9e2f50',
+		borderColor:'rgba(158,47,80,0)',
+		borderWidth:10
+	},
+	itemstyle1E:{
+		color:'#9e2f50',
+		borderColor:'rgba(158,47,80,0.5)',
+		borderWidth:10
+	},
+	itemstyle2N:{
+		color:'#4781aa',
+		borderColor:'rgba(71,129,170,0)',
+		borderWidth:10
+	},
+	itemstyle2E:{
+		color:'#4781aa',
+		borderColor:'rgba(71,129,170,0.5)',
+		borderWidth:10,
+		borderType:'solid'		
+	}
+}
+if (control.interactive == "close") {
+	opts.tooltipShow = false;
+	opts.legendSelect = false;
+	opts.itemstyle1E = opts.itemstyle1N;
+	opts.itemstyle2E = opts.itemstyle2N;
+} 
+
 const line1Option = {
 	title:{
 		text:'和GDP放缓相比，中国出口更显疲弱',
@@ -6,6 +39,7 @@ const line1Option = {
 	},
 
 	legend:{
+		selectedMode: opts.legendSelect,
 		orient:'vertical',
 		data:['出口同比增长率','GDP同比增长率'],
 		right:'5%',
@@ -38,7 +72,7 @@ const line1Option = {
 		interval:5,
 	},
 	tooltip:{
-		
+		show:opts.tooltipShow,
 		trigger:'item',
 		triggerOn:'mousemove',
 		position:'top',
@@ -55,17 +89,8 @@ const line1Option = {
 			symbolSize:8,
 			showAllSymbol:true,//标志图形默认会随坐标轴标签间隔隐藏策略而隐藏，如需全部显示，则可将showAllSymbol设为true
 			itemStyle:{//折线拐点标志的样式
-				normal:{
-					color:'#9e2f50',
-					borderColor:'rgba(158,47,80,0)',
-					borderWidth:10
-				},
-				emphasis:{
-					color:'#9e2f50',
-					borderColor:'rgba(158,47,80,0.5)',
-					borderWidth:10,
-					borderType:'solid'
-				}
+				normal:opts.itemstyle1N,
+				emphasis:opts.itemstyle1E
 			},
 			lineStyle:{
 				normal:{
@@ -93,17 +118,8 @@ const line1Option = {
 				}
 			},*/
 			itemStyle:{//折线拐点标志的样式
-				normal:{
-					color:'#4781aa',
-					borderColor:'rgba(71,129,170,0)',
-					borderWidth:10
-				},
-				emphasis:{
-					color:'#4781aa',
-					borderColor:'rgba(71,129,170,0.5)',
-					borderWidth:10,
-					borderType:'solid'
-				}
+				normal:opts.itemstyle2N,
+				emphasis:opts.itemstyle2E
 			},
 			lineStyle:{
 				normal:{

@@ -29,10 +29,13 @@ optionArr.push(line_inline9Option);
 import { line_inline10Option } from './echartOptions/line_inline10Option.js';
 optionArr.push(line_inline10Option);
 
+
+//import {control} from './control.js';
 import TrackEvents from './addGa.js';
 
 
 const line1= echarts.init(document.getElementById('line1'));
+
 line1.setOption(line1Option);
 
 
@@ -56,5 +59,6 @@ for(let i=1,n=10;i<=n;i++){
 	const option = optionArr[i-1];
 	chart.setOption(option);
 }
+
 
 TrackEvents.init();
