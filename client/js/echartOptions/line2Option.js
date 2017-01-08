@@ -1,3 +1,5 @@
+import {opts} from '../controlOpts.js';
+
 const line2Option = {
 	title:{
 		text:'其次，中国对外投资也同时放缓',
@@ -6,6 +8,7 @@ const line2Option = {
 	},
 
 	legend:{
+		selectedMode: opts.legendSelect,
 		orient:'vertical',
 		data:['中国非金融类对外直接投资同比增长率'],
 		right:'5%',
@@ -38,6 +41,7 @@ const line2Option = {
 		interval:20
 	},
 	tooltip:{
+		show:opts.tooltipShow,
 		trigger:'item',
 		triggerOn:'mousemove',
 		position:'top',
@@ -51,7 +55,13 @@ const line2Option = {
 			symbol:'circle',
 			symbolSize:8,
 			showAllSymbol:true,
+			label:opts.serieslabel,
+			hoverAnimation:opts.hoverAni,
+
 			itemStyle:{
+				normal:opts.itemstyle1N,
+				emphasis:opts.itemstyle1E
+				/*
 				normal:{
 					color:'#9e2f50',
 					borderColor:'rgba(158,47,80,0)',
@@ -63,6 +73,7 @@ const line2Option = {
 					borderWidth:10,
 					borderType:'solid'
 				}
+				*/
 			},
 			lineStyle:{
 				normal:{

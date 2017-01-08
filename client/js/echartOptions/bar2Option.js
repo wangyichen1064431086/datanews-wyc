@@ -1,3 +1,5 @@
+import {opts} from '../controlOpts.js';
+
 const bar2Option = {
 
 	title:{/*标题组件*/
@@ -10,6 +12,7 @@ const bar2Option = {
 	},
  
 	legend: {
+		selectedMode: opts.legendSelect,
 		data: ['中国对一带一路国家的投资金额比例','中国对其他国家的投资金额比例'],
 		top:65,
 		right:'5%',
@@ -18,7 +21,6 @@ const bar2Option = {
 		itemGap:10,//图例每项之间的间隔
 		itemWidth:30,//图例标记的图形宽度
 		itemHeight:15,//图例标记的图形高度
-		selectedMode:true,//是否可以通过点击图例改变系列的显示状态
 		inactiveColor:'gray',//图例关闭时的颜色
 		selected:{//图例选中状态表
 			'中国对一带一路国家的投资金额比例':true,
@@ -32,6 +34,8 @@ const bar2Option = {
 		top:65
 	},
 	tooltip:{
+		show:opts.tooltipShow,
+
 		trigger:'item',
 		
 		//position:'top',
@@ -128,13 +132,12 @@ const bar2Option = {
 			name:'中国对一带一路国家的投资金额比例',
 			type:'bar',
 			data:[52,49,53,33,39,35,39,30,40,31,27],
+			label:opts.serieslabel,
+			hoverAnimation:opts.hoverAni,
+
 			itemStyle:{
-				normal:{
-					color:'rgba(158,47,80,0.8)'
-				},
-				emphasis:{
-					color:'#9e2f50'
-				}
+				normal:opts.itemstyle3N,
+				emphasis:opts.itemstyle3E
 			}
 
 		},
@@ -142,13 +145,12 @@ const bar2Option = {
 			name:'中国对其他国家的投资金额比例',
 			type:'bar',
 			data:[48,51,47,67,61,65,61,70,60,69,73],
+			label:opts.serieslabel,
+			hoverAnimation:opts.hoverAni,
+
 			itemStyle:{
-				normal:{
-					color:'rgba(71,129,170,0.8)'
-				},
-				emphasis:{
-					color:'#4781aa'
-				}
+				normal:opts.itemstyle4N,
+				emphasis:opts.itemstyle4E
 			}
 		}
 	]

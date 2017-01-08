@@ -1,3 +1,6 @@
+import {opts} from '../controlOpts.js';
+
+
 const data=[//共65国
 			//东盟10国 + 蒙古
 			{name:'新加坡',value:'37.3'},
@@ -171,7 +174,7 @@ const map1Option ={
 		map:'world',
 		center:[72.168543,35.30823],
 		zoom:2,
-		roam:'scale',
+		roam:opts.geoRoam,
 		scaleLimit:{
 			min:2,
 			max:5
@@ -211,29 +214,22 @@ const map1Option ={
 			type:'scatter',//散点图
 			coordinateSystem:'geo',//地图坐标系
 			symbol:'circle',
+			label:opts.serieslabel,
+			hoverAnimation:opts.hoverAni,
 			data:convertData(data),
 			symbolSize: function(val){
 				return 5* Math.sqrt(val[2]);
 			},
 
 			itemStyle:{
-				normal:{
-					color:'rgba(158,47,80,0.5)',
-					borderColor:'#9e2f50',
-					borderWidth:2,
-					borderType:'solid'
-				},
-				emphasis:{
-					color:'rgba(158,47,80,0.8)',
-					borderColor:'#9e2f50',
-					borderWidth:4,
-					borderType:'solid'
-				}
+				normal:opts.itemstyle5N,
+				emphasis:opts.itemstyle5E
 			}
 		}	
 	],
 	
 	tooltip:{
+		show:opts.tooltipShow,
 		trigger:'item',
 		confine:true,
 		formatter:function(data){

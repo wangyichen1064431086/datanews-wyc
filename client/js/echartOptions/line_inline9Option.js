@@ -1,3 +1,5 @@
+import {opts} from '../controlOpts.js';
+
 const line_inline9Option = {
 	xAxis:{
 		type:'category',
@@ -43,19 +45,11 @@ const line_inline9Option = {
 			symbol:'circle',
 			symbolSize:4,
 			showAllSymbol:true,
+			label:opts.serieslabel,
+			hoverAnimation:opts.hoverAni,
 			itemStyle:{//折线拐点标志的样式
-				normal:{
-					color:'#9e2f50',
-					borderColor:'rgba(158,30,80,0.0)',
-					borderWidth:20,
-					borderType:'solid'
-				},
-				emphasis:{
-					color:'#9e2f50',
-					borderColor:'rgba(158,30,80,0.5)',
-					borderWidth:10,
-					borderType:'solid'
-				}
+				normal:opts.itemstyle6N,
+				emphasis:opts.itemstyle6E
 			},
 			lineStyle:{
 				normal:{
@@ -73,6 +67,7 @@ const line_inline9Option = {
 		}
 	],
 	tooltip:{
+		show:opts.tooltipShow,
 		trigger:'item',
 		triggerOn:'mousemove',
 		position:'top',
