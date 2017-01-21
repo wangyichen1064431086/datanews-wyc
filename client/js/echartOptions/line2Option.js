@@ -35,7 +35,8 @@ const line2Option = {
 	},
 	yAxis:{
 		type:'value',
-		name:'同比增长率 %',
+		name:'同比\n增长率 %',
+		nameGap:10,
 		min:0,
 		max:140,
 		interval:20

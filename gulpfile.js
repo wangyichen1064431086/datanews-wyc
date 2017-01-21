@@ -208,7 +208,7 @@ gulp.task('minify',function(){//不知为何这个任务有时候没法用
 ///疑问：为什么smoosh和minify执行完会挂在那里呢
 
 gulp.task('delete',(done)=>{
-	del(['.tmp/**','dist/**','result/**']).then(() =>{
+	del(['.tmp/**','dist/**','deploy/**']).then(() =>{
 		console.log('Files had been deleted');
 	});
 	done();

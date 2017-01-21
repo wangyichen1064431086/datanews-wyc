@@ -9,7 +9,7 @@ body {
 }
 header, article {
 	padding:0px;
-	margin:20px 10px;
+	margin:20px 20px;
 	@include oGridRespondTo(M){
 		width:740px;
 		margin:20px auto
@@ -45,7 +45,7 @@ header, article {
 
 .maincompo {
 	margin:0px;
-	margin-bottom:20px;
+	margin-bottom:30px;
 	//max-width:960px;
 	header {
 		font-weight:900;
@@ -77,8 +77,8 @@ header, article {
 
 	.chart {
 		margin:0 auto;
-		max-width:660px;
-		min-height:360px;//可以改为height=2/3width
+		max-width:300px;
+		min-height:300px;//可以改为height=2/3width
 		@include oGridRespondTo(M){
 			width:660px;
 			height:440px;

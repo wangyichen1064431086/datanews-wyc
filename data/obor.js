@@ -192,12 +192,13 @@ const content = {
 				}
 			],
 			"byVideo":{
-				"src":"http://cm14-ccm1.play.bokecc.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1483260779&key=27C74D18DC1D8DE9C50818EDFAE9F6FE",
+				//"src":"http://cm14-ccm1.play.bokecc8DE9C50818.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1483260779&key=27C74D18DC1DEDFAE9F6FE",
+				"src":"http://cm14-ccm1.play.bokecc.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1485011812&key=7F41E5F29353E7FBF0D0CD18E8133A70",
 				"controls":"controls",
 				"width":"100%",
 				"height":"100%",
 				"poster":"http://2-img.bokecc.com/comimage/922662811F1A49E9/2015-08-24/8D316418D92154209C33DC5901307461-1.jpg"
-			},
+			}/*,
 			"byObject":{
 				"width":"100%",
 				"height":"100%",
@@ -219,7 +220,7 @@ const content = {
 						"value":"always"
 					}
 				]
-			}
+			}*/
 		}
 	},
 			

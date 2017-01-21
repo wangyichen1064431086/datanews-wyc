@@ -26,7 +26,7 @@
 
 主色2： '#4781aa'  'rgba(71,129,170,0.5)'
 
-
+### 数据原料
 const data=[
 			{name:'Russia',value:'103'},
 			{name:'Kazakhstan',value:'38'},
@@ -78,7 +78,6 @@ const geoCoorMap = {
 	
 }
 
-  var data =
 
         [{
             "name": "阿富汗",
@@ -284,4 +283,11 @@ const geoCoorMap = {
 
 
         "videobody":"<div id='cc_video_8D316418D92154209C33DC5901307461_4707190'><object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0' width='742' height='417' id='cc_8D316418D92154209C33DC5901307461'><param name='movie' value='http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=true'><param value='transparent' name='wmode'><param name='allowFullScreen' value='true'><param name='allowScriptAccess' value='always'><embed src='http://p.bokecc.com/flash/player.swf?vid=8D316418D92154209C33DC5901307461&amp;siteid=922662811F1A49E9&amp;playerid=3571A3BF2AEC8829&amp;playertype=1&amp;autoStart=true' width='742' height='417' name='cc_8D316418D92154209C33DC5901307461' wmode='transparent' allowfullscreen='true' allowscriptaccess='always' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash'></object></div>"
-		}
+		
+
+### 待修改事项
+1. 手机端video并不能播放，待查bug
+
+2. 手机端上下滑动问题，图表要适量变小，图表间间距要适度增大或插入其他非交互内容，否则会卡在其中无法滑动
+
+3. 考察阅读效果需要统计各个板块分别被看到的次数，且需要停留1s
