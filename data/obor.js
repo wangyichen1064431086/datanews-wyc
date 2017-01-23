@@ -193,7 +193,7 @@ const content = {
 			],
 			"byVideo":{
 				//"src":"http://cm14-ccm1.play.bokecc8DE9C50818.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1483260779&key=27C74D18DC1DEDFAE9F6FE",
-				"src":"http://cm14-ccm1.play.bokecc.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1485011812&key=7F41E5F29353E7FBF0D0CD18E8133A70",
+				"src":"http://cm14-ccm1.play.bokecc.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1485192813&key=43254AA7C24ABA2F627A5CD385012676",
 				"controls":"controls",
 				"width":"100%",
 				"height":"100%",
