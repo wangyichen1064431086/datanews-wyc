@@ -7,9 +7,9 @@ body {
 	font-family: "Helvetica Neue", "Lucida Grande", Verdana, "PingFang SC", "PingFang TC", "Hiragino Sans GB", "Heiti SC", "Heiti TC", "WenQuanYi Micro Hei", "Microsoft YaHei", "Microsoft JhengHei", STHeiti, sans-serif;
 
 }
-header, article {
+header, article, footer {
 	padding:0px;
-	margin:20px 30px;
+	margin:30px 30px;
 	@include oGridRespondTo(M){
 		width:740px;
 		margin:20px auto
@@ -140,12 +140,12 @@ header, article {
 			font-size:18px;
 		}
 		.videosource{
-			width:355px;
-			height:225px;
+			width:315px;//330/186
+			height:177.5px;
 			margin:0 auto;
 			@include oGridRespondTo(M){
 				width:600px;
-				height:380px;
+				height:338.2px;
 			}
 		}
 	
@@ -153,7 +153,10 @@ header, article {
 
 }
 
+footer {
+	text-align: right;
 
+}
 
 
 

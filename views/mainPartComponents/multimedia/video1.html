@@ -17,14 +17,14 @@
 	
 	{% if dataroot.byVideo %}
 		{% set dataroot1 = dataroot.byVideo %}
-		<video x-webkit-airplay="allow" webkit-playsinline playsinline="true" src="{{ dataroot1.src }}" {{ dataroot1.controls }} width="{{dataroot1.width}}" height="{{dataroot1.height}}" poster="{{dataroot1.poster}}">	 
+		<video x-webkit-airplay="allow" webkit-playsinline playsinline="true" preload="auto" src="{{ dataroot1.src }}" {{ dataroot1.controls }} width="{{dataroot1.width}}" height="{{dataroot1.height}}" poster="{{dataroot1.poster}}">	 
 			{% if dataroot1.params %}
 				{% for param in dataroot1.params%}
 					<source src={{param.src}} type={{param.type}}>
 				{% endfor %}
 			{% endif %}
 		</video>
-		
+
 	{% elif dataroot.byObject %}
 		{% set dataroot1 = dataroot.byObject %}
 	

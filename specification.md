@@ -287,6 +287,9 @@ const geoCoorMap = {
 
 ### 待修改事项
 1. 手机端video并不能播放，待查bug
+给video加上属性x-webkit-airplay="allow" webkit-playsinline playsinline="true"
+
+src:http://cm14-ccm1.play.bokecc.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1485192813&key=43254AA7C24ABA2F627A5CD385012676
 
 2. 手机端上下滑动问题，图表要适量变小，图表间间距要适度增大或插入其他非交互内容，否则会卡在其中无法滑动
 

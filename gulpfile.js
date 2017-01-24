@@ -38,7 +38,7 @@ gulp.task('html',() => {
 		}		
 
 		//const myData = yield helper.readJson('data/obor.json');
-		const myData = require('./data/obor.js');
+		const myData = yield require('./data/obor.js');
 		const myTemplate = 'index.html';
 
 		const renderResult = yield helper.render(myTemplate,myData);
@@ -147,7 +147,7 @@ gulp.task('serve',gulp.parallel(
 				//directory:true
 			}
 		});
-		gulp.watch(['views/**/**/*.html','data/**/*.js'],gulp.parallel('html'));
+		gulp.watch(['views/**/**/*.html','data/*.js'],gulp.parallel('html'));
 		gulp.watch(['client/styles/*.scss'],gulp.parallel('styles'));
 	}
 
