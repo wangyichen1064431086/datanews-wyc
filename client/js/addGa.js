@@ -40,28 +40,41 @@ class TrackEvents{
 	trackScrollEvent(trackedEl,config){
 		let recorded = 0;
 		window.addEventListener('scroll',function(){
-			//进行条件判断，如果元素中心点出现在视口中
+			//进行条件判断，如果元素左上角出现在视口中
 
 			const elem = elemWithMeasure(trackedEl);//调用函数得到对象
 			const client = clientWithMeasure;//直接使用对象
-			/*
-			const elemCenterX = elem.leftInView+ elem.width/2 ;
-			const elemCenterY = elem.topInView + elem.height/2 ;
-			*/
+		
+			/*以元素左上角为基准
 			const elemX = elem.leftInView;
 			const elemY = elem.topInView;
-			
+			*/
 
+			/*以元素中心为基准*/
+			const elemX = elem.leftInView+elem.width/2;
+			const elemY = elem.topInView+elem.height/2;
+
+	
 			if(recorded == 0 && elemX > 0 && elemX < client.width &&
 			   elemY > 0 && elemY < client.height){
-				console.log("sendScrollGa");
-				console.log(trackedEl);
-				console.log("elemX:"+elemX);
-				console.log("elemY:"+elemY);
-				console.log("clientWidth:"+client.width);
-				console.log("clientHeight:"+client.height);
-				ga('send',config);
-				recorded = 1;
+			
+				window.setTimeout(function(){
+					if(recorded == 0 && elemX > 0 && elemX < client.width && 
+						elemY > 0 && elemY < client.height){
+						console.log(trackedEl);
+						console.log("left:"+elem.leftInView);
+						console.log("top:"+elem.topInView);
+						console.log("elemX:"+elemX);
+						console.log("elemY:"+elemY);
+						console.log("clientWidth:"+client.width);
+						console.log("clientHeight:"+client.height);
+						ga('send',config);
+						recorded = 1;
+					}
+				
+				},1000);//元素左上角要出现在视口中超过1s才算被看见
+				
+
 			}
 		},false);
 	}
@@ -100,6 +113,8 @@ class TrackEvents{
 				eventLabel:'map1chart'
 			}
 		));
+
+		///统计各元素被看到的次数
 		trackedEls.push(new TrackEvents(
 			"titlePart","scroll",{
 				hitType:'event',
@@ -109,19 +124,99 @@ class TrackEvents{
 			}
 		));
 		trackedEls.push(new TrackEvents(
-			"bar2","scroll",{
+			"pureText1","scroll",{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'bar2Inview'
+				eventLabel:'pureText1'
 			}
 		));
 		trackedEls.push(new TrackEvents(
-			"map1","scroll",{
+			"textAroundPic","scroll",{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'map1Inview'
+				eventLabel:'textAroundPic'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"lineGraph1","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'lineGraph1'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"lineGraph2","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'lineGraph2'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"pureText2","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'pureText2'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"barGraph2","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'barGraph2'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"mapGraph1","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'mapGraph1'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"pureText3","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'pureText3'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"tableArea1","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'tableArea1'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"pureText4","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'pureText4'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"video1","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'video1'
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"footerPart","scroll",{
+				hitType:'event',
+				eventCategory:control.interactive,
+				eventAction:'Inview',
+				eventLabel:'footerPart'
 			}
 		));
 		console.log(control.interactive);
