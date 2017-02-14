@@ -83,7 +83,7 @@ const opts = {
 	hoverAni:true
 	
 }
-if (control.interactive == "close") {
+if (control.interactive == "close" && control.testMode == 1) {
 	opts.tooltipShow = false;
 	opts.legendSelect = false;
 	opts.itemstyle1E = opts.itemstyle1N;

@@ -13,9 +13,13 @@ const $ = require('gulp-load-plugins')();
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpackConfig.js');
+//const webpackConfig2 = require('./webpackConfig2.js');
+
 const del = require('del');
 //const htmlmin = require('gulp-html-minifier');
 const echarts = require('echarts');
+
+import {control} from './control.js';//node怎样才支持import??
 
 gulp.task('prod',function(){
 	process.env.NODE_ENV = 'prod';
@@ -25,7 +29,30 @@ gulp.task('dev',function(){
 	process.env.NODE_ENV = 'dev';
 });
 
-
+/*
+gulp.task('webpackfordata',(done) => {
+	const destDir = '.tmpdata';
+	if(!isThere(destDir)){
+		mkdirp(destDir,(err) => {
+			if(err) {
+				console.log(err);
+			}
+		});
+	}	
+	webpack(webpackConfig2,function(err,stats){
+		if(err){
+			throw new $.util.PluginErr('webpack',err);
+		}
+		$.util.log('[webpack]',stats.toString({
+			colors:$.util.colors.supportsColor,
+			chunks:false,
+			hash:false,
+			version:false
+		}));
+		done();
+	});
+});
+*/
 gulp.task('html',() => {
 	return co(function *(){
 		const destDir = '.tmp';
@@ -39,12 +66,17 @@ gulp.task('html',() => {
 
 		//const myData = yield helper.readJson('data/obor.json');
 		const myData = yield require('./data/obor.js');
+
+		if(control.testMode==2){
+			my.video1.location = control.video;
+		}
+
 		const myTemplate = 'index.html';
 
 		const renderResult = yield helper.render(myTemplate,myData);
 		console.log(renderResult);
 		const dest = destDir + '/obor.html';
-		fs.writeFile(dest,renderResult,'utf8');/*疑问：这行之前为什么不能用yield???*/
+		fs.writeFile(dest,renderResult,'utf8'); /*疑问：这行之前为什么不能用yield???*/
 	}).then(function(){
 		console.log("build html successfully!");
 		browserSync.reload('*.html');

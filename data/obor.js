@@ -1,3 +1,5 @@
+//import {control} from './control.js';
+
 const content = {
 	"themeTitle":"obor",
 
@@ -182,6 +184,7 @@ const content = {
 			]
 		},
 		"video1":{
+			"location": "atEnd",
 			"header":"【视频】：中国力推“一带一路”，沿线国家怎么看？",
 			"abstract":[
 				{
@@ -228,5 +231,11 @@ const content = {
 		"originArti":"http://www.ftchinese.com/interactive/5065?isad=1&d?isad=1"
 	}
 }
+
+/*
+if(control.testMode==2){
+	content.video1.location = control.video;
+}
+*/
 
 module.exports = content;

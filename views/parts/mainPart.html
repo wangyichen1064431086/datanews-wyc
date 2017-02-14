@@ -1,5 +1,9 @@
 {% set dataroot = mainPart %}
 <article id="mainPart">
+	{% if dataroot.video1.location == "atEnd" %}
+		{% include "mainPartComponents/multimedia/video1.html" %}
+	{% endif %}
+	
 	{% if dataroot.pureText1 %}
 		{% include "mainPartComponents/text/pureText1.html" %}
 	{% endif %}
@@ -48,7 +52,7 @@
 		{% include "mainPartComponents/text/pureText4.html" %}
 	{% endif %}
 
-	{% if dataroot.video1 %}
+	{% if dataroot.video1.location == "atEnd" %}
 		{% include "mainPartComponents/multimedia/video1.html" %}
 	{% endif %}
 
