@@ -37,21 +37,6 @@ gulp.task('rollup', () => {
 
 //let myData = new Object();
 
-gulp.task('getdata',(done) => {
-	//console.log(control);
-	//console.log(myData);
-	var myData = require('./data/obor.js');
-	const control = require('./lib/control.js').control;
-	
-	console.log(myData);
-	console.log(control);
-	if(control.testMode == 2){
-		console.log(control.video);
-		myData.mainPart.video1.location = control.video;
-	}
-	console.log(myData);
-	done();
-});
 
 gulp.task('prod',function(){
 	process.env.NODE_ENV = 'prod';
