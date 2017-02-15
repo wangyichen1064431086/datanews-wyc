@@ -18,8 +18,40 @@ const webpackConfig = require('./webpackConfig.js');
 const del = require('del');
 //const htmlmin = require('gulp-html-minifier');
 const echarts = require('echarts');
+const rollup = require('rollup').rollup;
 
-import {control} from './control.js';//node怎样才支持import??
+//import {control} from './client/js/control.js';//node怎样才支持import??
+
+
+gulp.task('rollup', () => {
+  return rollup({
+    entry: './client/js/control.js',
+   // cache: cache,
+  }).then(function(bundle) {
+    return bundle.write({
+      format: 'cjs',
+      dest: 'lib/control.js',
+    });
+  });
+});
+
+//let myData = new Object();
+
+gulp.task('getdata',(done) => {
+	//console.log(control);
+	//console.log(myData);
+	var myData = require('./data/obor.js');
+	const control = require('./lib/control.js').control;
+	
+	console.log(myData);
+	console.log(control);
+	if(control.testMode == 2){
+		console.log(control.video);
+		myData.mainPart.video1.location = control.video;
+	}
+	console.log(myData);
+	done();
+});
 
 gulp.task('prod',function(){
 	process.env.NODE_ENV = 'prod';
@@ -53,9 +85,20 @@ gulp.task('webpackfordata',(done) => {
 	});
 });
 */
-gulp.task('html',() => {
-	return co(function *(){
+gulp.task('html',(myData) => {
+	return co(function* (){
+		let myData = require('./data/obor.js');//gulp不同任务之间不能引用变量，也不能引用全局变量
+		const control = require('./lib/control.js').control;
+		
+		//console.log(myData);
+		console.log(control);
+		if(control.testMode == 2){
+			console.log(control.video);
+			myData.mainPart.video1.location = control.video;
+		}
+		console.log(myData);
 		const destDir = '.tmp';
+		
 		if(!isThere(destDir)){
 			mkdirp(destDir,(err) => {
 				if(err) {
@@ -63,20 +106,14 @@ gulp.task('html',() => {
 				}
 			});
 		}		
-
+		
 		//const myData = yield helper.readJson('data/obor.json');
-		const myData = yield require('./data/obor.js');
-
-		if(control.testMode==2){
-			my.video1.location = control.video;
-		}
 
 		const myTemplate = 'index.html';
-
 		const renderResult = yield helper.render(myTemplate,myData);
 		console.log(renderResult);
 		const dest = destDir + '/obor.html';
-		fs.writeFile(dest,renderResult,'utf8'); /*疑问：这行之前为什么不能用yield???*/
+		fs.writeFile(dest,renderResult,'utf8'); 
 	}).then(function(){
 		console.log("build html successfully!");
 		browserSync.reload('*.html');
@@ -85,48 +122,8 @@ gulp.task('html',() => {
 	});
 			
 });
-/*
-gulp.task('paincharts',() => {
-	const line1Option = require('./data/echartOptions/line1Option.js');
-	const line2Option = require('./data/echartOptions/line2Option.js');
-	const bar2Option = require('./data/echartOptions/bar2Option.js');
-	const map1Option = require('./data/echartOptions/map1Option.js');
 
-	const optionArr = new Array();
-	optionArr.push(require('./data/echartOptions/line_inline1Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline2Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline3Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline4Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline5Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline6Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline7Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline8Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline9Option.js')); 
-	optionArr.push(require('./data/echartOptions/line_inline10Option.js')); 
 
-	return gulp.src(['.tmp/obor.html'])
-		.pipe($.cheerio(function($,file,done){
-			console.log($('#line1')[0]);
-			(echarts.init($('#line1')[0])).setOption(line1Option);
-			/*
-			(echarts.init($('#line2'))).setOption(line2Option);
-			(echarts.init($('#bar2'))).setOption(bar2Option);
-
-			$.get('./mapSource/world.json', function (worldJson) {//这个jQuery的get方法只能针对obor.html目录设置路径
-			    echarts.registerMap('world', worldJson);
-			    (echarts.init($('#map1'))).setOption(map1Option);
-			});
-			
-			for(let i=1,n=10;i<=n;i++){
-				const chart = echarts.init($(`#inlineLine${i}`));
-				const option = optionArr[i-1];
-				chart.setOption(option);
-			}
-			done();
-		}))
-		.pipe(gulp.dest('.tmp/'));
-};
-*/
 gulp.task('styles',function(){
 	const DEST = '.tmp/styles';
 
