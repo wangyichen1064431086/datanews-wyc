@@ -13,14 +13,11 @@ const $ = require('gulp-load-plugins')();
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpackConfig.js');
-//const webpackConfig2 = require('./webpackConfig2.js');
 
 const del = require('del');
 //const htmlmin = require('gulp-html-minifier');
 const echarts = require('echarts');
 const rollup = require('rollup').rollup;
-
-//import {control} from './client/js/control.js';//node怎样才支持import??
 
 
 gulp.task('rollup', () => {
@@ -35,8 +32,6 @@ gulp.task('rollup', () => {
   });
 });
 
-//let myData = new Object();
-
 
 gulp.task('prod',function(){
 	process.env.NODE_ENV = 'prod';
@@ -46,32 +41,10 @@ gulp.task('dev',function(){
 	process.env.NODE_ENV = 'dev';
 });
 
-/*
-gulp.task('webpackfordata',(done) => {
-	const destDir = '.tmpdata';
-	if(!isThere(destDir)){
-		mkdirp(destDir,(err) => {
-			if(err) {
-				console.log(err);
-			}
-		});
-	}	
-	webpack(webpackConfig2,function(err,stats){
-		if(err){
-			throw new $.util.PluginErr('webpack',err);
-		}
-		$.util.log('[webpack]',stats.toString({
-			colors:$.util.colors.supportsColor,
-			chunks:false,
-			hash:false,
-			version:false
-		}));
-		done();
-	});
-});
-*/
-gulp.task('html',(myData) => {
+
+gulp.task('html',() => {
 	return co(function* (){
+		/*
 		let myData = require('./data/obor.js');//gulp不同任务之间不能引用变量，也不能引用全局变量
 		const control = require('./lib/control.js').control;
 		
@@ -82,6 +55,7 @@ gulp.task('html',(myData) => {
 			myData.mainPart.video1.location = control.video;
 		}
 		console.log(myData);
+		*/
 		const destDir = '.tmp';
 		
 		if(!isThere(destDir)){
@@ -92,7 +66,7 @@ gulp.task('html',(myData) => {
 			});
 		}		
 		
-		//const myData = yield helper.readJson('data/obor.json');
+		const myData = yield helper.readJson('data/obor.json');
 
 		const myTemplate = 'index.html';
 		const renderResult = yield helper.render(myTemplate,myData);

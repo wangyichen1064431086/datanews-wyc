@@ -23,10 +23,17 @@ class TrackEvents{
 			trackedEl = document.getElementById(trackedEl);
 		}
 		this.trackedEl = trackedEl;
+
+		config.eventCategory = control.testMode==1?control.interactive:control.video;
+
 		if(type == "click"){
 			this.trackClickEvent(trackedEl,config);
 		} else if(type == "scroll"){
 			this.trackScrollEvent(trackedEl,config);
+		} else if(type == "play") {
+			this.trackPlayEvent(trackedEl,config);
+		} else if(type == "pause"){
+			this.trackPauseEvent(trackedEl,config);
 		}
 		
 	}
@@ -37,6 +44,27 @@ class TrackEvents{
 		},false);
 	}
 
+	trackPlayEvent(trackedEl,config){
+		trackedEl.addEventListener('play',function(){
+			ga('send',config);
+		});
+	}
+
+	trackPauseEvent(trackedEl,config){
+		trackedEl.addEventListener('pause',function(){
+			const playtime = trackedEl.currentTime;//这里要记录播放时长,trackedEl.currentTime,单位为s
+			let playvalue = 0;
+			if (playtime<5){
+				playvalue = 0;
+			} else if(playtime>=5&&playtime<10){
+				playvalue = 1;
+			} else if(playtime>=10){
+				playvalue = 2;
+			}
+			config.eventValue = playvalue;
+			ga('send',config);
+		})
+	}
 	trackScrollEvent(trackedEl,config){
 		let recorded = 0;
 		window.addEventListener('scroll',function(){
@@ -81,54 +109,104 @@ class TrackEvents{
 
 	static init(){
 		const trackedEls = new Array();
-		trackedEls.push(new TrackEvents(
-			"line1","click",{
-				hitType:'event',
-				eventCategory:control.interactive,
-				eventAction:'Click',
-				eventLabel:'line1chart'
+		if(control.testMode == 1){//实验1
+			trackedEls.push(new TrackEvents(
+				"line1","click",{
+					hitType:'event',
+					//eventCategory:control.interactive,
+					eventAction:'Click',
+					eventLabel:'line1chart'
+				}
+			));
+			trackedEls.push(new TrackEvents(
+				"line2","click",{
+					hitType:'event',
+					//eventCategory:control.interactive,
+					eventAction:'Click',
+					eventLabel:'line2chart'
+				}
+			));
+			trackedEls.push(new TrackEvents(
+				"bar2","click",{
+					hitType:'event',
+					//eventCategory:control.interactive,
+					eventAction:'Click',
+					eventLabel:'bar2chart'
+				}
+			));
+			trackedEls.push(new TrackEvents(
+				"map1","click",{
+					hitType:'event',
+					//eventCategory:control.interactive,
+					eventAction:'Click',
+					eventLabel:'map1chart'
+				}
+			));
+		} else if(control.testMode == 2){
+			if(control.video == "atStart"){
+				trackedEls.push(new TrackEvents(
+					"videoAtStart","play",{
+						hitType:'event',
+						//eventCategory:control.video,
+						eventAction:'Play',
+						eventLabel:'videoAtStart'
+					}
+				));
+				trackedEls.push(new TrackEvents(
+					"videoAtStart","pause",{
+						hitType:'event',
+						//eventCategory:control.video,
+						eventAction:'Pause',
+						eventLabel:'videoAtStart'
+					}
+				));
+			} else if(control.video == "atEnd"){
+				trackedEls.push(new TrackEvents(
+					"videoAtEnd","play",{
+						hitType:'event',
+						//eventCategory:control.video,
+						eventAction:'Play',
+						eventLabel:'videoAtEnd'
+					}
+				));
+				trackedEls.push(new TrackEvents(
+					"videoAtEnd","pause",{
+						hitType:'event',
+						//eventCategory:control.video,
+						eventAction:'Pause',
+						eventLabel:'videoAtEnd'
+					}
+				));
 			}
-		));
-		trackedEls.push(new TrackEvents(
-			"line2","click",{
-				hitType:'event',
-				eventCategory:control.interactive,
-				eventAction:'Click',
-				eventLabel:'line2chart'
-			}
-		));
-		trackedEls.push(new TrackEvents(
-			"bar2","click",{
-				hitType:'event',
-				eventCategory:control.interactive,
-				eventAction:'Click',
-				eventLabel:'bar2chart'
-			}
-		));
-		trackedEls.push(new TrackEvents(
-			"map1","click",{
-				hitType:'event',
-				eventCategory:control.interactive,
-				eventAction:'Click',
-				eventLabel:'map1chart'
-			}
-		));
+		}
+	
 
 		///统计各元素被看到的次数
 		trackedEls.push(new TrackEvents(
 			"titlePart","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:testMode==1?control.interactive:control.video,
 				eventAction:'Inview',
-				eventLabel:'titlepart'
+				eventLabel:'titlepart',
+				eventValue:0
+			}
+		));
+		trackedEls.push(new TrackEvents(
+			"videoAtStart","scroll",{
+				hitType:'event',
+				//eventCategory:testMode==1?control.interactive:control.video,
+				eventAction:'Inview',
+				eventLabel:'videoAtStart',
+				eventValue:1
 			}
 		));
 		trackedEls.push(new TrackEvents(
 			"pureText1","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:testMode==1?control.interactive:control.video,
 				eventAction:'Inview',
-				eventLabel:'pureText1'
+				eventLabel:'pureText1',
+				eventValue:2
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -136,7 +214,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'textAroundPic'
+				eventLabel:'textAroundPic',
+				eventValue:3
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -144,7 +223,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'lineGraph1'
+				eventLabel:'lineGraph1',
+				eventValue:4
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -152,7 +232,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'lineGraph2'
+				eventLabel:'lineGraph2',
+				eventValue:5
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -160,7 +241,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'pureText2'
+				eventLabel:'pureText2',
+				eventValue:6
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -168,7 +250,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'barGraph2'
+				eventLabel:'barGraph2',
+				eventValue:7
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -176,7 +259,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'mapGraph1'
+				eventLabel:'mapGraph1',
+				eventValue:8
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -184,7 +268,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'pureText3'
+				eventLabel:'pureText3',
+				eventValue:9
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -192,7 +277,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'tableArea1'
+				eventLabel:'tableArea1',
+				eventValue:10
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -200,15 +286,17 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'pureText4'
+				eventLabel:'pureText4',
+				eventValue:11
 			}
 		));
 		trackedEls.push(new TrackEvents(
-			"video1","scroll",{
+			"videoAtEnd","scroll",{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'video1'
+				eventLabel:'videoAtEnd',
+				eventValue:12
 			}
 		));
 		trackedEls.push(new TrackEvents(
@@ -216,7 +304,8 @@ class TrackEvents{
 				hitType:'event',
 				eventCategory:control.interactive,
 				eventAction:'Inview',
-				eventLabel:'footerPart'
+				eventLabel:'footerPart',
+				eventValue:13
 			}
 		));
 		console.log(control.interactive);
