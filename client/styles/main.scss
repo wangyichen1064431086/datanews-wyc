@@ -135,6 +135,7 @@ header, article, footer {
 
 
 	&.video{
+		display:none;
 		header{
 			font-weight:900;
 			font-size:18px;
@@ -152,17 +153,33 @@ header, article, footer {
 	}
 
 }
-
-footer {
-	text-align: right;
-
+.footerpart{
+	position:relative;
+}
+.footer-content{
+	position:absolute;
+	left:10%;
+	width:90%;
+	p {
+		font-size:16px;
+		word-break:break-all;
+	}
 }
 
 
 
 
 
-
+.nounderline {
+	text-decoration:none;
+}
+.datasource {
+	text-align:right;
+	color:#909090;
+	p {
+		font-size:14px;
+	}
+}
 .pic-asbg {
 	position:relative;
 	background-repeat:no-repeat;

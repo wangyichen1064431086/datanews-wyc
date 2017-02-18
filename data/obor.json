@@ -42,9 +42,12 @@
 		},
 
 		"barGraph1":false,
-		"lineGraph1":true,
-		"lineGraph2":true,
-		
+		"lineGraph1":{
+			"dataSource":"数据来源：中国商务部"
+		},
+		"lineGraph2":{
+			"dataSource":"数据来源：中国商务部"
+		},
 		"pureText2":{
 			"paragraphs":[
 				{
@@ -62,8 +65,12 @@
 			]
 		},
 
-		"barGraph2":true,
-		"mapGraph1":true,
+		"barGraph2":{
+			"dataSource":"数据来源：China Global Investment Tracker, AEI(统计至2015年6月）"
+		},
+		"mapGraph1":{
+			"dataSource":"数据来源：China Global Investment Tracker, AEI(统计至2015年6月）"
+		},
 		
 		"pureText3":{
 			"paragraphs":[
@@ -81,7 +88,7 @@
 					"th":"公司"
 				},
 				{
-					"th":"2011~2014年投资金额"
+					"th":"2011~2014年投资金额(亿美元)"
 				}
 			],
 			"tbody":[
@@ -165,7 +172,8 @@
 						}
 					]
 				}
-			]
+			],
+			"dataSource":"数据来源：China Global Investment Tracker, AEI"
 		},
 		"pureText4":{
 			"paragraphs":[
@@ -191,17 +199,17 @@
 					"word":"（请点击屏幕看视频。若视频无法加载，请<a href='http://www.ftchinese.com/video/1688' target='_blank'>点击此处</a>）"
 				}
 			],
-			"byVideo":{
-				"src":"http://cm14-ccm1.play.bokecc.com/flvs/ca/QxFza/uCWDR1P4bF-10.mp4?t=1485192813&key=43254AA7C24ABA2F627A5CD385012676",
-				"controls":"controls",
-				"width":"100%",
-				"height":"100%",
-				"poster":"http://2-img.bokecc.com/comimage/922662811F1A49E9/2015-08-24/8D316418D92154209C33DC5901307461-1.jpg"
+			"byScript":{
+				"src":"http://p.bokecc.com/player?vid=8D316418D92154209C33DC5901307461&siteid=922662811F1A49E9&autoStart=false&width=100%&height=100%&playerid=3571A3BF2AEC8829&playertype=1"
 			}
 		}
 	},
 			
 	"footerPart":{
-		"originArti":"http://www.ftchinese.com/interactive/5065?isad=1&d?isad=1"
+		"ft":"FT中文网",
+		"ftwebsite":"http://www.ftchinese.com/",
+		"originArti":"http://www.ftchinese.com/interactive/5065?isad=1&d?isad=1",
+		"originAuthors":"张帆 王烁 史书华 林栋 蒋馨尔 刘皓琳",
+		"specialThanksto": "王丰 孙宇 倪卫国"
 	}
 }

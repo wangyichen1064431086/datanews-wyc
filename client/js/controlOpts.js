@@ -71,8 +71,24 @@ const opts = {
 	},
 
 	geoRoam:'scale',//for map
-
+	mapSubtext:'(请缩放屏幕，看地图上详细资讯)',//for map
 	serieslabel:{
+		normal:{
+			show:false
+		},
+		emphasis:{
+			show:false
+		}
+	},
+	serieslabelMap:{
+		normal:{
+			show:false
+		},
+		emphasis:{
+			show:false
+		}
+	},
+	serieslabelLine_inline:{
 		normal:{
 			show:false
 		},
@@ -93,26 +109,53 @@ if (control.interactive == "close" && control.testMode == 1) {
 	opts.itemstyle5E = opts.itemstyle5N;
 	opts.itemstyle6E = opts.itemstyle6N;
 	opts.geoRoam = false;
+	opts.mapSubtext = '(单位：亿)';
 	opts.hoverAni = false;
 
-	/* //这个label待处理
-	opts.serieslabel = {
+	opts.serieslabelMap = {
 		normal:{
 			show:true,
-			formatter:'{c}',
+			formatter:function(val){
+				return val[2];
+			},
 			textStyle:{
 				fontSize:8
 			}
 		},
 		emphasis:{
 			show:true,
-			formatter:'{c}',
+			formatter:function(val){
+				return val[2];
+			},
 			textStyle:{
 				fontSize:8
 			}
 		}
 	};
-	*/
-} 
+	
+	opts.serieslabelLine_inline = {
+		normal:{
+			show:true,
+			position:[0,-4],
+			//offset:[0,50],
+			formatter:'{c}',
+			textStyle:{
+				fontSize:8,
+				color:'#000'
+			}
+		},
+		emphasis:{
+			show:true,
+			position:[0,-4],
+			//offset:[0,50],
+			formatter:'{c}',
+			textStyle:{
+				fontSize:8,
+				color:'#000'
+			}
+		}
+	};
+}
+
 
 export {opts};

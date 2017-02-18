@@ -109,6 +109,7 @@ class TrackEvents{
 
 	static init(){
 		const trackedEls = new Array();
+		const eventCategory = control.testMode==1?control.interactive:control.video;
 		if(control.testMode == 1){//实验1
 			trackedEls.push(new TrackEvents(
 				"line1","click",{
@@ -212,7 +213,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"textAroundPic","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'textAroundPic',
 				eventValue:3
@@ -221,7 +222,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"lineGraph1","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'lineGraph1',
 				eventValue:4
@@ -230,7 +231,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"lineGraph2","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'lineGraph2',
 				eventValue:5
@@ -239,7 +240,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"pureText2","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'pureText2',
 				eventValue:6
@@ -248,7 +249,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"barGraph2","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'barGraph2',
 				eventValue:7
@@ -257,7 +258,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"mapGraph1","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'mapGraph1',
 				eventValue:8
@@ -266,7 +267,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"pureText3","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'pureText3',
 				eventValue:9
@@ -275,7 +276,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"tableArea1","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'tableArea1',
 				eventValue:10
@@ -284,7 +285,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"pureText4","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'pureText4',
 				eventValue:11
@@ -293,7 +294,7 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"videoAtEnd","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'videoAtEnd',
 				eventValue:12
@@ -302,13 +303,13 @@ class TrackEvents{
 		trackedEls.push(new TrackEvents(
 			"footerPart","scroll",{
 				hitType:'event',
-				eventCategory:control.interactive,
+				//eventCategory:control.interactive,
 				eventAction:'Inview',
 				eventLabel:'footerPart',
 				eventValue:13
 			}
 		));
-		console.log(control.interactive);
+		console.log(eventCategory);
 		return trackedEls;
 	}
 }

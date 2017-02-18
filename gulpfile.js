@@ -135,7 +135,7 @@ gulp.task('serve',gulp.parallel(
 				//directory:true
 			}
 		});
-		gulp.watch(['views/**/**/*.html','data/*.js'],gulp.parallel('html'));
+		gulp.watch(['views/**/**/*.html','data/*.json'],gulp.parallel('html'));
 		gulp.watch(['client/styles/*.scss'],gulp.parallel('styles'));
 	}
 

@@ -4,7 +4,7 @@ const bar2Option = {
 
 	title:{/*标题组件*/
 		show:true,//Bool|default:true|是否显示标题组件
-		text:"中国对一带一路国家投资金额占中国海外投资总金额比例\n仍有增长空间",
+		text:"中国对一带一路国家投资金额占\n海外投资总金额比例仍有增长空间",
 		left:'center',
 		top:'top',
 		bottom:'90%'

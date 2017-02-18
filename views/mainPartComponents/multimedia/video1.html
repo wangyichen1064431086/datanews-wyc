@@ -1,39 +1,44 @@
 {% set dataroot = mainPart.video1 %}
 
 
-	<header>
-		{{ dataroot.header }}
-	</header>
-	{% for paragraph in dataroot.abstract %}
-		<p>
-			{{ paragraph.word }}
-		</p>
-	{% endfor %}
-	<!--<video src="{{ dataroot.src }}" controls="{{ dataroot.controls }}" width="{{dataroot.width}}" height="{{dataroot.height}}">	
-	</video>
-	-->
-	
-	<div class='videosource'>
-	
-	{% if dataroot.byVideo %}
-		{% set dataroot1 = dataroot.byVideo %}
-		<video x-webkit-airplay="allow" webkit-playsinline playsinline="true" preload="auto" src="{{ dataroot1.src }}" {{ dataroot1.controls }} width="{{dataroot1.width}}" height="{{dataroot1.height}}" poster="{{dataroot1.poster}}">	 
-			{% if dataroot1.params %}
-				{% for param in dataroot1.params%}
-					<source src={{param.src}} type={{param.type}}>
-				{% endfor %}
-			{% endif %}
-		</video>
+<header>
+	{{ dataroot.header }}
+</header>
+{% for paragraph in dataroot.abstract %}
+	<p>
+		{{ paragraph.word }}
+	</p>
+{% endfor %}
+<!--<video src="{{ dataroot.src }}" controls="{{ dataroot.controls }}" width="{{dataroot.width}}" height="{{dataroot.height}}">	
+</video>
+-->
 
-	{% elif dataroot.byObject %}
-		{% set dataroot1 = dataroot.byObject %}
-	
-		<object width={{dataroot1.width}} height={{dataroot1.height}}>
+<div class='videosource'>
+
+{% if dataroot.byVideo %}
+	{% set dataroot1 = dataroot.byVideo %}
+	<video x-webkit-airplay="allow" webkit-playsinline playsinline="true" preload="auto" src="{{ dataroot1.src }}" {{ dataroot1.controls }} width="{{dataroot1.width}}" height="{{dataroot1.height}}" poster="{{dataroot1.poster}}">	 
+		{% if dataroot1.params %}
 			{% for param in dataroot1.params%}
-				<param name={{param.name}} value={{param.value}}>
+				<source src={{param.src}} type={{param.type}}>
 			{% endfor %}
-		</object>
-	{% endif %}
-	</div>
+		{% endif %}
+	</video>
+
+{% elif dataroot.byObject %}
+	{% set dataroot1 = dataroot.byObject %}
+
+	<object width={{dataroot1.width}} height={{dataroot1.height}}>
+		{% for param in dataroot1.params%}
+			<param name={{param.name}} value={{param.value}}>
+		{% endfor %}
+	</object>
+{% elif dataroot.byScript %}
+	  <script src="{{dataroot.byScript.src}}" type="text/javascript"></script>
+
+{% endif %}
+
+
+</div>
 	
 

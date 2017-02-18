@@ -3,6 +3,9 @@ import {proRandom} from './proRandom.js';
 let myRandom = proRandom();
 console.log(myRandom);
 
+let randomForMode = proRandom();
+console.log(randomForMode);
+
 const control = (function() {
 	const interactive = myRandom<0.5 ? "open":"close";
 
@@ -16,9 +19,9 @@ const control = (function() {
 		video = "no";
 	}
 
-	const testMode = 2;//实验1：测试交互
+	//sconst testMode = 2;//实验1：测试交互
 	//或为2：测试video位置
-
+	const testMode = randomForMode<0.5?1:2;
 
 
 	return {

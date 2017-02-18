@@ -45,7 +45,7 @@ const line_inline7Option = {
 			symbol:'circle',
 			symbolSize:4,
 			showAllSymbol:true,
-			label:opts.serieslabel,
+			label:opts.serieslabelLine_inline,
 			hoverAnimation:opts.hoverAni,
 			itemStyle:{//折线拐点标志的样式
 				normal:opts.itemstyle6N,

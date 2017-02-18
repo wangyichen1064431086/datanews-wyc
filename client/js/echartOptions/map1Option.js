@@ -147,7 +147,7 @@ const convertData = function (data) {
 const map1Option ={
 	title:{
 		text:'2013年至今，\n中国对一带一路国家的投资概况',
-		subtext:'(请缩放屏幕，看地图上详细资讯)',
+		subtext:opts.mapSubtext,
 		subtextStyle:{
 			color:'#333',
 			fontSize:14
@@ -214,7 +214,7 @@ const map1Option ={
 			type:'scatter',//散点图
 			coordinateSystem:'geo',//地图坐标系
 			symbol:'circle',
-			label:opts.serieslabel,
+			label:opts.serieslabelMap,
 			hoverAnimation:opts.hoverAni,
 			data:convertData(data),
 			symbolSize: function(val){
